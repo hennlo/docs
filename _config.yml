@@ -1,0 +1,12 @@
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+title: "" # the name of your site, e.g. ACME Corp.
+
+# Set the source folder
+source: source
+
+# Jekyll Collections
+collections:
+  about:
+    output: true # Set to render files in _pages folder
+    permalink: /:title/ # Set the format of the permalink by default 
