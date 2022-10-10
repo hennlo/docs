@@ -10,3 +10,6 @@ collections:
   about:
     output: true # Set to render files in _pages folder
     permalink: /:title/ # Set the format of the permalink by default 
+
+sass:
+    sass_dir: _sass
