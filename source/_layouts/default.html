@@ -4,8 +4,39 @@
   <body>
     <div class="container">
       {% include header.html %}
-      {{ content }}
+
       {% include sidebar.html %}
+
+      {% if page.toc == true %}
+      {% if page.homepage != true %}
+            <!-- Smaller column col-xl-8 -->
+            <main role="main" class="col col-lg-8 ml-sm-auto px-lg-5">
+      {% endif %}
+      {% else %}
+              <!-- larger column col-xl-10 -->
+              <main role="main" class="ml-sm-auto col-lg-10 px-lg-5">
+      {% endif %}
+
+      {{ content }}
+              </main>
+
+              {% if page.toc == true %}
+              <div class="toc-col col-md-2">
+                <div class="toc-col-contents">  <!-- lets all elements scroll -->
+                  <div class="d-none d-lg-block pb-4">
+                    {% include contribute-options.html %}
+                  </div>
+                  <div class="toc-right-title">On this page</div>
+                  <div id="toc-right">
+                  </div>
+                </div>
+              </div>
+             {% endif %}
+            </div>
+          </div>
+      
+
+      
       {% include footer.html %}
     </div>
   </body>
