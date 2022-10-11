@@ -2,6 +2,20 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # the subpath of your site, e.g. /blog
 title: "" # the name of your site, e.g. ACME Corp.
 
+
+# Custom
+
+# brand
+copyright: "The Polypheny Project"
+
+## Social Media
+twitter_username: "polypheny"
+youtube_channel: "polypheny"
+linkedin_page: "polypheny"
+github_repository: "https://github.com/polypheny/Polypheny-DB"
+
+
+
 # Set the source folder
 source: source
 
@@ -13,3 +27,5 @@ collections:
 
 sass:
     sass_dir: _sass
+
+
