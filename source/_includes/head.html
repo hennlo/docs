@@ -30,32 +30,5 @@
 
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
 
-    {% if page.comparison == true %}<link rel="stylesheet" type="text/css" href="{{ '/assets/css/select2.min.css' | relative_url }}">{% endif %}
-    <link rel="stylesheet" href="{{ '/assets/css/fonts.css' | relative_url }}">
-    <link rel="preload" href="{{ '/assets/css/customstyles.css' | relative_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/assets/css/customstyles.css"></noscript>
-
-
-    <script>
-        var pageConfig = {
-          tocNotNested: {% if page.toc_not_nested %}true{% else %}false{% endif %}
-        };
-    </script>
-
-    <script>
-        function whenAvailable(name, callback, isJqueryFn = false) {
-        var interval = 500; // ms
-        var evaluation = isJqueryFn ? $()[name] : window[name];
-        window.setTimeout(function() {
-            if (evaluation) {
-                callback();
-            } else {
-                whenAvailable(name, callback, isJqueryFn);
-            }
-        }, interval);
-        }
-    </script>
-
-    <script src="{{ '/assets/js/jquery.min.js' | relative_url }}"></script>
 
 </head>
