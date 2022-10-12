@@ -18,8 +18,7 @@ github_repository: "https://github.com/polypheny/Polypheny-DB"
 
 
 
-# Set the source folder
-source: source
+
 
 # Jekyll Collections
 collections:
