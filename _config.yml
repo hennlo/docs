@@ -1,11 +1,15 @@
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # the subpath of your site, e.g. /blog
 title: "" # the name of your site, e.g. ACME Corp.
+description: "Test text"
 
 
 # Custom Settings
 
 ## Brand
+
+contact_email: "info@polypheny.com"
+support_email: "support@polypheny.com"
 
 ### Legal
 copyright: "The Polypheny Project"
