@@ -10,11 +10,12 @@
                             {{ site.title | escape }}
                         {% endif %}
                     </li>
-                        {% if site.contact-email %}
-                            <li><a class="u-email" href="mailto:{{site.contact-email}}"></a></li>
+                        {% if site.contact_email %}
+                            <li><a class="u-email" href="mailto:{{site.contact_email}}">{{ site.contact_email }}</a></li>
                         {% endif %}
+                        
 
-                        {% if site.contact-email %}
+                        {% if site.copyright %}
                         <li>&copy; {{ site.copyright }} {{ 'now' | date: "%Y" }}</li>
                         {% endif %}
                 </ul>
