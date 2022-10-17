@@ -6,23 +6,25 @@
     <div class="container">
       {% include header.html %}
 
-      <nav id="sidebarMenu" class="">
+      <div id=mid-area>
         {% include sidebar.html %}
-      </nav>
+        
 
-      {% if page.toc == true %}
-      {% if page.homepage != true %}
-            <!-- Smaller column col-xl-8 -->
-            <main role="main" class="">
-      {% endif %}
-      {% else %}
-              <!-- larger column col-xl-10 -->
+        {% if page.toc == true %}
+        {% if page.homepage != true %}
+              <!-- Smaller column col-xl-8 -->
               <main role="main" class="">
-      {% endif %}
+        {% endif %}
+        {% else %}
+                <!-- larger column col-xl-10 -->
+                <main role="main" class="">
+        {% endif %}
 
-      <div class="content column">
-        {{ content }}
-      </div>
+        <div class="content">
+          {{ content }}
+        </div>
+    </div>
+
               </main>
 
               {% if page.toc == true %}

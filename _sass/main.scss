@@ -25,6 +25,13 @@ a {
   text-decoration: none;
 }
 
+main {
+  overflow-y: auto;  // Adds disbaled scrollbar from parent: "container" back for main content
+  flex-grow: 0;  /* ensures that the container will take up the full height of the parent container */
+  background-color: orange;
+  z-index: 0;
+  padding: 3em;
+}
 
 .container {
   display: flex;
@@ -32,32 +39,42 @@ a {
   overflow: hidden;  // Make parent container non-scrolable
   margin: 0px;  /* removes default style */
   display: flex;  /* enables flex content for its children */
-  box-sizing: border-box;
   background-color: pink;
-  
 }
 
 
-main {
-  overflow-y: auto;  // Adds disbaled scrollbar from parent: "container" back for main content
-  flex-grow: 1;  /* ensures that the container will take up the full height of the parent container */
-  
+#mid-area {
+  display: flex;
+  flex-direction: row;
+
+  margin-top: 6em;
 }
 
 
 #header {
   height: 6em;
+  width: 100%;
   background-color: aqua;
 
-  flex-shrink: 0;
   display: flex;
+  flex-direction: row;
+
+  flex-shrink: 0;
+  
   justify-content: space-between;
   align-items: center;
-  z-index: 0; // Always show on front
+  z-index: 9999; // Always show on front
   
   box-shadow: 0 -6px 10px 5px rgba(0,0,0,0.5);
+
   
 }
+
+#polypheny-left-header {
+  display: flex;
+  align-items: center;
+}
+
 
 
 .home-logo{
@@ -66,17 +83,12 @@ main {
 }
 
 #logo-wrapper{
-  margin-top: 1em;
+  margin-top: 1em; // Small SPacing from top to align more central
 }
 
-#page-title{
-  vertical-align: middle;
-  text-align: center;
 
-}
 
 .column {
-  height: 100%;  /* allows both columns to span the full height of the browser window */
   display: flex;
   flex-direction: column;  /* stacks the left and right headers above the bottom content */
 }
@@ -87,18 +99,49 @@ ul {
   list-style: none;
 }
 
-.sidebar{
+#sidebarMenu{
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;  /* stacks the left and right headers above the bottom content */
+
+  overflow-y: auto;  // Adds disbaled scrollbar from parent: "container" back for main content
+
   background-color: yellow;
-  z-index: 1;
+  width: 20em;  
+  z-index: 999;
+  flex-shrink: 0;  /* makes sure that content is not cut off in a smaller browser window */
+    
+  //align-items: center;
+
+}
+
+/* Style the search box inside the navigation bar */
+#sidebarMenu input[type=text] {
+  float: right;
+  padding: 0.5em;
+  padding-left: 1em;
+  
+  margin: 1em;
+  font-size: 17px;
+}
 
 
+.sidebar{
+  padding: 1em;
   
-  width: 15em;
-  
+
+}
+
+.border-right {
+  border-right: 100px solid #D6DBE7 !important;
+}
+
+.position-fixed {
+  position: fixed !important;
 }
 
 .site-footer{
-  background-color:lightgray;
+  background-color:gray;
 
   flex-shrink: 0;
   display: flex;
