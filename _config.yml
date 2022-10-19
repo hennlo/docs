@@ -11,8 +11,10 @@ tagline:               >
 # A list of keywords for your blog
 keywords:              [polystore, distribution, databases, multi-stores, nosql, sql]
 
-lang: en
- 
+
+lang: en  
+default_lang: en
+
 # Custom Settings
 
 ## Brand

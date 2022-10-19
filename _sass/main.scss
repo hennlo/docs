@@ -27,7 +27,7 @@ a {
 
 main {
   overflow-y: auto;  // Adds disbaled scrollbar from parent: "container" back for main content
-  flex-grow: 0;  /* ensures that the container will take up the full height of the parent container */
+  flex-grow: 1;  /* ensures that the container will take up the full height of the parent container */
   background-color: orange;
   z-index: 0;
   padding: 3em;
@@ -155,7 +155,15 @@ a.navbar-item:hover::before {
   height: 3px;
 }
 
+#locality {
+  margin-right: 4em;
+  display: flex;
+}
 
+#locality img{
+  width: 1.5em;
+  margin-left: 0.5em;
+}
 
 
 .column {
@@ -171,16 +179,21 @@ ul {
 
 #sidebarMenu{
   display: flex;
+  
   min-height: 100%;
   flex-direction: column;  /* stacks the left and right headers above the bottom content */
-
+  flex-shrink: 1;
+  flex-grow: 1;
   overflow-y: auto;  // Adds disbaled scrollbar from parent: "container" back for sidebar
   
   background-color: yellow;
   width: 20em;  
   z-index: 999;
   flex-shrink: 0;  /* makes sure that content is not cut off in a smaller browser window */
-    
+  border-right: 1px solid#D5D8DC;;
+
+  position: relative;
+
   //align-items: center;
 
 }
@@ -200,10 +213,6 @@ ul {
   padding: 1em;
   
 
-}
-
-.border-right {
-  border-right: 100px solid #D6DBE7 !important;
 }
 
 .position-fixed {
