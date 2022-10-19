@@ -1,17 +1,26 @@
 <div id="header" class="position-fixed ">
     <div id="polypheny-left-header" class="header-col">
+        
+        <!-- Logo -->
         <div id="logo-wrapper">
             <a href="/"> 
                 <img class="home-logo" alt="Polypheny Logo" src="/assets/images/logos/logo-landscape.svg">
             </a> 
         </div>
 
+        <!-- Logo Seperator -->
+        <div class="logo-separator">|</div>
+
+        <!-- Page Title -->
         <div id="page-title">
-                <h2>| {{ site.short_title }} </h2>
+            <a href="#">
+                <span>{{ site.short_title }} </span>
+            </a>
         </div>
 
     </div>
     
+    <!-- NavBar -->
     <nav class="header-col">
         {% include navmenu.html %}
     </nav>

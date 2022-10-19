@@ -31,6 +31,7 @@ main {
   background-color: orange;
   z-index: 0;
   padding: 3em;
+  overflow-x: hidden;  // Make parent container non-scrolable
 }
 
 .container {
@@ -78,14 +79,41 @@ main {
 
 
 .home-logo{
-  width: 15em;
-  
+  width: 13em;
+  margin-left: 1em;
 }
 
 #logo-wrapper{
-  margin-top: 1em; // Small SPacing from top to align more central
+  margin-top: 1em; // Small Spacing from top to align more central
 }
 
+
+.logo-separator{
+  font-family: 'Lato', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 100;
+  color: #D5D8DC;
+  padding-left: 15px;
+  padding-right: 15px;
+    
+}
+
+
+#page-title{
+  margin-top: 0.3em; // Small Spacing from top to align more central
+  font-size: 1.2rem;
+  font-family: "Texta-Bold", sans-serif;
+  color: #11577F;
+  font-weight: 500;
+  
+}
+
+
+.navbar-item{
+  font-family: "Poppins",sans-serif;
+  padding-right: 2em;
+  font-size: 1.2em;
+}
 
 
 .column {
