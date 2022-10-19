@@ -32,6 +32,7 @@ main {
   z-index: 0;
   padding: 3em;
   overflow-x: hidden;  // Make parent container non-scrolable
+  width: 100%; // Content Page is always filled
 }
 
 .container {
@@ -108,12 +109,53 @@ main {
   
 }
 
+.navbar{
+  align-self: stretch;
+  margin-right: 10em;
+}
 
 .navbar-item{
   font-family: "Poppins",sans-serif;
-  padding-right: 2em;
-  font-size: 1.2em;
+  font-size: 0.95em;
 }
+ 
+
+/* Navvbar animation*/
+a.navbar-item{
+  color: #000;
+
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #031D44;
+  padding: 0.75em 0em;
+  margin: 0em 0.75em;
+  display: inline-block;
+  position: relative;
+  opacity: 0.75;
+}
+
+a.navbar-item:hover{
+  opacity: 1;
+}
+
+a.navbar-item::before {
+  transition: 200ms;
+
+  content: "";
+  position: absolute;
+  background-color: #031D44;
+
+  height: 0%;
+  width: 100%;
+  bottom: 0px;
+}
+
+a.navbar-item:hover::before {
+  height: 3px;
+}
+
+
 
 
 .column {
@@ -132,8 +174,8 @@ ul {
   min-height: 100%;
   flex-direction: column;  /* stacks the left and right headers above the bottom content */
 
-  overflow-y: auto;  // Adds disbaled scrollbar from parent: "container" back for main content
-
+  overflow-y: auto;  // Adds disbaled scrollbar from parent: "container" back for sidebar
+  
   background-color: yellow;
   width: 20em;  
   z-index: 999;

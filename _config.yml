@@ -1,7 +1,7 @@
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # the subpath of your site, e.g. /blog
 title: "Polypheny Documenation" # the name of your site, e.g. ACME Corp.
-short_title: "Documenation"
+short_title: "Documenation" # Will be capitilized
 description:           >
   A self-adaptive Polystore that provides cost- and workload aware access to heterogeneous data.
 
