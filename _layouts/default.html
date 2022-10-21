@@ -10,22 +10,23 @@
         {% include sidebar.html %}
         
 
-        {% if page.toc == true %}
-        {% if page.homepage != true %}
-              <!-- Smaller column col-xl-8 -->
-              <main role="main" class="">
-        {% endif %}
-        {% else %}
-                <!-- larger column col-xl-10 -->
+          {% if page.toc == true %}
+          {% if page.homepage != true %}
+                <!-- Smaller column col-xl-8 -->
                 <main role="main" class="">
-        {% endif %}
+          {% endif %}
+          {% else %}
+                  <!-- larger column col-xl-10 -->
+                  <main role="main" class="">
+          {% endif %}
 
-        <div class="content">
-          {{ content }}
-        </div>
-    </div>
-
-              </main>
+                <div class="content">
+                  {{ content }}
+                </div>
+                /main>
+      </div>
+      {% include footer.html %}
+              
 
               {% if page.toc == true %}
               <div class="toc-col col-md-2">
@@ -39,12 +40,14 @@
                 </div>
               </div>
              {% endif %}
+
+             
             </div>
           </div>
       
 
+          
       
-      {% include footer.html %}
     </div>
   </body>
 </html>

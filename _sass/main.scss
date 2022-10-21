@@ -48,7 +48,7 @@ main {
 #mid-area {
   display: flex;
   flex-direction: row;
-
+  position: relative;
   margin-top: 6em;
 }
 
@@ -67,9 +67,7 @@ main {
   align-items: center;
   z-index: 9999; // Always show on front
   
-  box-shadow: 0 -6px 10px 5px rgba(0,0,0,0.5);
-
-  
+  box-shadow: 0 -6px 10px 5px rgba(0,0,0,0.5); 
 }
 
 #polypheny-left-header {
@@ -78,14 +76,14 @@ main {
 }
 
 
-
 .home-logo{
-  width: 13em;
+  width: 12em;
   margin-left: 1em;
 }
 
+
 #logo-wrapper{
-  margin-top: 1em; // Small Spacing from top to align more central
+  margin-top: 0.5em; // Small Spacing from top to align more central
 }
 
 
@@ -106,13 +104,14 @@ main {
   font-family: "Texta-Bold", sans-serif;
   color: #11577F;
   font-weight: 500;
-  
 }
+
 
 .navbar{
   align-self: stretch;
   margin-right: 10em;
 }
+
 
 .navbar-item{
   font-family: "Poppins",sans-serif;
@@ -162,12 +161,11 @@ a.navbar-item:hover::before {
 
 #locality img{
   width: 1.5em;
-  -left: 0.5em;
+  margin-left: 0.5em;
 }
 
 
 .column {
-  height: 100%;
   display: flex;
   flex-direction: column;  /* stacks the left and right headers above the bottom content */
 }
@@ -179,37 +177,35 @@ ul {
 }
 
 #sidebarMenu{
-
   flex-grow: 1;
-  overflow-y: auto;  // Adds disbaled scrollbar from parent: "container" back for sidebar
+  overflow-y: scroll;
   
   background-color: yellow;
-  width: 20em;  
+  width: 25em;  
   z-index: 999;
 
-  border-right: 1px solid#D5D8DC;;
-
+  border-right: 1px solid#D5D8DC;
   
-
-  //align-items: center;
-
 }
 
-/* Style the search box inside the navigation bar */
-#sidebarMenu input[type=text] {
-  float: right;
+
+.sidebar-wrapper{
+  
+}
+
+
+/* Style the search box inside the navigation bar*/
+#searchbox input[type=text] {
+
   padding: 0.5em;
   padding-left: 1em;
+  padding-right: 1em;
   
-  margin: 1em;
-  font-size: 17px;
-}
-
+  font-size: 1.2em;
+} 
 
 .sidebar{
-  padding: 1em;
-  
-
+  padding-top: 1em;
 }
 
 .position-fixed {
@@ -219,15 +215,17 @@ ul {
 .site-footer{
   background-color:gray;
 
-  flex-shrink: 0;
+  flex-shrink: 1;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  z-index: 0; // Always show on front
+  z-index: 1; // Always show on front
+  
+  position: relative;
 }
 
 // Socials Sytling 
-
 .social-logo {
   width: 1.5em;
 }
