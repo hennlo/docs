@@ -3,10 +3,11 @@
   {% include head.html %}
 
   <body>
+    {% include header.html %}
     <div class="container">
-      {% include header.html %}
+      
 
-      <div id=mid-area>
+      <div id="maincontent" class="row">
         {% include sidebar.html %}
         
 
@@ -23,7 +24,7 @@
                 <div class="content">
                   {{ content }}
                 </div>
-                /main>
+              </main>
       </div>
       {% include footer.html %}
               
