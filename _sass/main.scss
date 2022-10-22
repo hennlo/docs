@@ -355,6 +355,10 @@ a.navbar-item:hover::before {
   font-weight: 550;
 }
 
+.footer-col > ul {
+  padding-left: 0;
+}
+
 // Socials Sytling 
 .social-logo {
   width: 1.5em;
@@ -362,6 +366,7 @@ a.navbar-item:hover::before {
 
 ul.social-media-list {
   list-style: none;
+  
   
 }
 ul.social-media-list > li{
