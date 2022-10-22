@@ -1,37 +1,43 @@
-<footer class="site-footer h-card">
-    <div class="wrapper">
-        <h2 class="footer-heading">{{site.title | escape}}</h2>
+<footer class="site-footer">
+    
+        <div class="footer-heading">{{site.title | escape}}</div>
         
-        <div class="footer-col-wrapper">
+        <div class="">
+            <p>{{ site.description | escape }}</p>
+        </div>
+
+        <div class="footer-col-wrapper row">
             <div class="footer-col footer-col-1">
+                <div class="footer-col-heading"> Contact </div>
                 <ul class="contact-list">
-                    <li class="p-name">
-                        {% if site.title %}
-                            {{ site.title | escape }}
-                        {% endif %}
-                    </li>
-                        {% if site.contact_email %}
-                            <li><a class="u-email" href="mailto:{{site.contact_email}}">{{ site.contact_email }}</a></li>
-                        {% endif %}
-                        
-
-                        {% if site.copyright %}
-                        <li>&copy; {{ site.copyright }} {{ 'now' | date: "%Y" }}</li>
-                        {% endif %}
+                    {% if site.contact_email %}
+                        <li><a class="u-email" href="mailto:{{site.contact_email}}">{{ site.contact_email }}</a></li>
+                    {% endif %}
                 </ul>
-            </div>
-
-            <div class="footer-col footer-col-2"> 
-                <h4>Socials</h4>
-                {% include social.html %}
             </div>
             
 
             <div class="footer-col footer-col-3">
+                <div class="footer-col-heading"> Socials </div>
                 <p>{{ site.description | escape }}</p>
             </div>
+
+            <div class="footer-col footer-col-4">
+                <div class="footer-col-heading"> Socials </div>
+                <p>{{ site.description | escape }}</p>
+            </div>
+
+            <div class="footer-col footer-col-2"> 
+                <div class="footer-col-heading"> Socials </div>
+                {% include social.html %}
+            </div>
+
         </div>
         
-    </div>
+        <div id="copyright">
+            {% if site.copyright %}
+                &copy; {{ site.copyright }} {{ 'now' | date: "%Y" }}
+            {% endif %}
+        </div>
  
 </footer>
