@@ -4,7 +4,8 @@
         <!-- Logo -->
         <div id="logo-wrapper">
             <a href="/"> 
-                <img class="home-logo" alt="Polypheny Logo" src="/assets/images/logos/logo-landscape.svg">
+                <img class="home-logo media-full" alt="Polypheny Logo" src="/assets/images/logos/logo-landscape.svg">
+                <img class="home-logo media-600" alt="Polypheny Logo" src="/assets/images/logos/logo-symbol.svg">
             </a> 
         </div>
 
@@ -21,19 +22,25 @@
     </div>
     
     <!-- NavBar -->
-    <nav class="header-col">
+    <nav class="header-col collapse">
         {% include navmenu.html %}
     </nav>
 
-    <div id="locality" class="header-col">
-        <div id="language">
+    <div id="locality" class="header-col ">
+        <div id="language" class="collapse">
             <!-- Language Switcher -->
             <img alt="Language Switcher" src="/assets/images/utils/world-dark.png">
         </div>
 
-        <div id="display-theme">
+        <div id="display-theme" class="collapse">
             <!-- Night/Day Theme Swith -->
             <img alt="Dark Mode Toggle" src="/assets/images/utils/moon-symbol.png">
         </div>
+    </div>
+
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
     </div>
 </div>

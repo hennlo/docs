@@ -101,8 +101,9 @@ main {
 #header {
     height: $header_height;
     width: 100%;
+    
     background-color: aqua;
-  
+
     display: flex;
     flex-direction: row;
   
@@ -155,13 +156,14 @@ main {
 
 .navbar{
   align-self: stretch;
-  margin-right: 10em;
+  padding-left: 2em;
+  padding-right: 1em;
 }
 
 
 .navbar-item{
   font-family: "Poppins",sans-serif;
-  font-size: 0.95em;
+  font-size: 0.95rem;
 }
   
 
@@ -210,6 +212,106 @@ a.navbar-item:hover::before {
   margin-left: 0.5em;
 }
 /****/
+
+
+//Desktop
+@media only screen and (min-width: 992px) {
+
+  .home-logo{
+    width: 12em;
+    margin-left: 1em;
+  }
+
+  .media-full{
+    display: block;
+  }
+
+  .media-600{
+    display: none;
+  }
+}
+
+
+.hamburger {
+  display: none;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #101010;
+}
+
+
+
+// Tablet
+@media only screen and (min-width:  992px) {
+
+  
+ 
+ 
+}
+
+
+// Tablet
+@media only screen and (min-width: 600px) and (max-width:  992px) {
+
+  
+  .media-600{
+    display: none;
+  }
+
+  .collapse{
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    padding-right: 1em;
+
+  }
+ 
+
+}
+
+
+// Phone
+@media only screen and (max-width: 600px) {
+
+
+  .media-full{
+    display: none;
+  }
+
+  .media-600{
+    display: block;
+    width: 4em;
+    margin-left: 1em;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    padding-right: 1em;
+  }
+
+  .collapse{
+    display: none;
+  }
+
+  // Footer
+  .site-footer{
+    background-color:gray;
+  
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+}
 
 
 
@@ -311,14 +413,14 @@ a.navbar-item:hover::before {
 .site-footer{
   background-color:gray;
 
-  padding-left: 20em;
-  padding-right: 20em;
+  padding-left: 15em;
+  padding-right: 15em;
 
   
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
+  //justify-content: space-around;
+  align-items:left;
   z-index: 0; // Always show on front
 
 }
@@ -329,11 +431,15 @@ a.navbar-item:hover::before {
   padding-top: 1em;
   margin-bottom: -0.75em;
 
+  
 }
+
+.flex-start{
+}
+
 
 .footer-col-wrapper{
   flex: 1 1 auto;
-
 }
 
 
@@ -349,6 +455,7 @@ a.navbar-item:hover::before {
   
 
 }
+
 
 .footer-col-heading{
   font-size: 1.1em;
