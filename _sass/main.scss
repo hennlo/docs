@@ -48,9 +48,9 @@ main {
   padding: 3em;
   overflow-x: hidden;  // Make parent container non-scrolable
   width: 100%; // Content Page is always filled
-
-  flex: 0 0 83.3333333333%;
-  max-width: 83.3333333333%;
+  position: relative;
+  flex-wrap: wrap;
+  
 }
 /***/
 
@@ -155,9 +155,12 @@ main {
 
 
 .navbar{
-  align-self: stretch;
-  padding-left: 2em;
-  padding-right: 1em;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: .5rem 1rem;
 }
 
 
@@ -229,6 +232,14 @@ a.navbar-item:hover::before {
   .media-600{
     display: none;
   }
+
+  main{
+    flex: 0 0 83.3333333333%;
+    max-width: 83.3333333333%;
+
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
+  }
 }
 
 
@@ -248,12 +259,32 @@ a.navbar-item:hover::before {
 
 
 
-// Tablet
+// Desktop
 @media only screen and (min-width:  992px) {
 
-  
+  #sidebarMenu {
+    display: block !important;
+    // Take up 1/6 of the screens width
+    flex: 0 0 16.6666666667%;
+    max-width: 16.6666666667%;
+  }
  
- 
+}
+
+
+@media screen and (max-width: 991px){
+  #sidebarMenu {
+    height: auto;
+    position: fixed;
+    z-index: 10;
+    background-color: #fff;
+    top: 108px;
+    border-top: 1px solid #D6DBE7;
+    border-bottom: 1px solid #D6DBE7;
+    height: 60%;
+    overflow: scroll;
+    padding-bottom: 15px;
+  }
 }
 
 
@@ -314,6 +345,12 @@ a.navbar-item:hover::before {
 }
 
 
+@media (min-width: 576px){
+  main {
+    margin-left: auto !important;
+  }
+}
+
 
 /***
   Content beneath Header
@@ -334,14 +371,11 @@ a.navbar-item:hover::before {
 **/
 
 #sidebarMenu{
-  display: block !important;
+ 
   padding-right: 0 !important;
   padding-top: 1rem !important;
   border-right: 1px solid#D5D8DC;
 
-  // Take up 1/6 of the screens width
-  flex: 0 0 16.6666666667%;
-  max-width: 16.6666666667%;
 
   position: relative;
   width: 100%;
