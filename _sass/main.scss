@@ -167,7 +167,7 @@ main {
 .navbar-item{
   font-family: "Poppins",sans-serif;
   font-size: 0.95rem;
-  padding: 0.75em 0em;
+  padding: 0.75em 0.5em;
 }
   
 
@@ -183,6 +183,8 @@ a.navbar-item{
   display: inline-block;
   position: relative;
   opacity: 0.75;
+  margin-left: 0.25em;
+  margin-right: 0.25em;
 }
 
 a.navbar-item:hover{
@@ -217,6 +219,14 @@ a.navbar-item:hover::before {
 /****/
 
 
+
+
+/*
+**
+ MEDIA QUERIES
+ **
+*/
+
 //Desktop
 @media only screen and (min-width: 992px) {
 
@@ -234,9 +244,13 @@ a.navbar-item:hover::before {
   }
 
 
-  .row {
-
+    /***
+    Content beneath Header
+  ***/
+  #maincontent {
+    padding-top: 6em;
   }
+
 
   main{
     flex: 0 0 83.3333333333%;
@@ -249,6 +263,13 @@ a.navbar-item:hover::before {
   .site-footer{
     padding-left: 15em;
     padding-right: 15em;  
+  }
+
+  #sidebarMenu {
+    display: block !important;
+    // Take up 1/6 of the screens width
+    flex: 0 0 16.6666666667%;
+    max-width: 16.6666666667%;
   }
 }
 
@@ -269,17 +290,6 @@ a.navbar-item:hover::before {
 
 
 
-// Desktop
-@media only screen and (min-width:  992px) {
-
-  #sidebarMenu {
-    display: block !important;
-    // Take up 1/6 of the screens width
-    flex: 0 0 16.6666666667%;
-    max-width: 16.6666666667%;
-  }
- 
-}
 
 
 @media screen and (max-width: 991px){
@@ -317,6 +327,13 @@ a.navbar-item:hover::before {
   }
  
 
+ /***
+    Content beneath Header
+  ***/
+  #maincontent {
+    padding-top: 6em;
+  }
+
 }
 
 
@@ -330,7 +347,7 @@ a.navbar-item:hover::before {
 
   .media-600{
     display: block;
-    width: 4em;
+    width: 3.5em;
     margin-left: 1em;
   }
 
@@ -342,12 +359,19 @@ a.navbar-item:hover::before {
 
   #header{
     flex-direction: column;
+    height: 5em;
+  }
+
+
+  #maincontent {
+    padding-top: 5em;
   }
 
   .navbar{
     flex-direction: column;
     width: 100%;
-    align-self: center;
+    
+    
   }
 
   a.navbar-item{
@@ -381,7 +405,6 @@ a.navbar-item:hover::before {
 ***/
 #maincontent {
   position: relative;
-  padding-top: 6em;
 }
 
 

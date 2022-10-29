@@ -17,6 +17,11 @@ default_lang: en
 
 # Custom Settings
 
+## Versioning
+versions:
+  stable: v0.8
+
+
 ## Brand
 
 contact_email: "info@polypheny.com"
