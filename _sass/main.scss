@@ -1,7 +1,7 @@
 $backgroundColor: #ffffff;
 $bodyColor: #000000;
 $bodyFont: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-$header_height: 6em;
+$header_height: 5em;
 /***
   General HTML Styling
 ***/
@@ -120,6 +120,7 @@ main {
 #polypheny-left-header {
   display: flex;
   align-items: center;
+  align-self: flex-start;
 }
   
   
@@ -153,6 +154,31 @@ main {
   font-weight: 500;
 }
 
+
+
+.checkbox {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+}
+
+.bar {
+  display: block;
+  border-radius: 0.5em;
+  width: 100%;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #101010;
+}
+
+#polypheny-right-header{
+  display: flex;
+  flex-direction: row;
+}
 
 .navbar{
   position: relative;
@@ -208,13 +234,14 @@ a.navbar-item:hover::before {
 }
 
 #locality {
-  padding-right: 4em;
   display: flex;
+  align-items: center;
 }
 
 #locality img{
   width: 1.5em;
   margin-left: 0.5em;
+  cursor: pointer;
 }
 /****/
 
@@ -227,7 +254,7 @@ a.navbar-item:hover::before {
  **
 */
 
-//Desktop
+// Desktop Only
 @media only screen and (min-width: 992px) {
 
   .home-logo{
@@ -244,11 +271,22 @@ a.navbar-item:hover::before {
   }
 
 
+  #polypheny-right-header{
+    flex: 0 0 60%;
+    max-width: 60%;
+    align-items: center;
+  }
+
+  #locality{
+    position: absolute;
+    right: 1.0em;
+  }
+
     /***
     Content beneath Header
   ***/
   #maincontent {
-    padding-top: 6em;
+    padding-top: 5em;
   }
 
 
@@ -274,25 +312,17 @@ a.navbar-item:hover::before {
 }
 
 
-.hamburger {
-  display: none;
-}
-
-.bar {
-  display: block;
-  width: 25px;
-  height: 3px;
-  margin: 5px auto;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  background-color: #101010;
-}
 
 
 
 
+// Mobile Only
+@media screen and (max-width: 992px){
 
-@media screen and (max-width: 991px){
+  $mobile_header_height: 5em;
+
+ 
+
   #sidebarMenu {
     height: auto;
     position: fixed;
@@ -304,6 +334,105 @@ a.navbar-item:hover::before {
     height: 60%;
     overflow: scroll;
     padding-bottom: 15px;
+  }
+
+
+  // Navigation Menu
+
+  .checkbox {
+    margin: 0;
+    display: block;
+    cursor: pointer;
+
+    position: absolute;
+    right: 1.1em;
+
+    width: 34px;
+    height: 34px;
+    opacity: 0;
+    z-index: 5;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    padding-right: 1em;
+    position: absolute;
+    width: 40px;
+    right: 0.2em;
+    z-index: 2;
+  }
+
+  
+.hamburger .bar1 {
+  transform-origin: 0% 0%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.hamburger .bar2 {
+  transition: transform 0.1s ease-in-out;
+}
+
+.hamburger .bar3 {
+  transform-origin: 0% 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+#polypheny-left-header input[type="checkbox"]:checked ~ .hamburger .bar1 {
+  transform: rotate(45deg);
+}
+
+#polypheny-left-header input[type="checkbox"]:checked ~ .hamburger .bar2 {
+  transform: scaleY(0);
+}
+
+#polypheny-left-header input[type="checkbox"]:checked ~ .hamburger .bar3 {
+  transform: rotate(-45deg);
+}
+
+  #header{
+    flex-direction: column;
+    height: $mobile_header_height;
+  }
+
+  #polypheny-right-header{
+    flex-direction: column;
+    width: 100%;
+    background: rgba(0, 255, 255, 0.9);
+    align-items: center;
+  }
+
+
+  .navbar{
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+
+  a.navbar-item{
+    display: block;
+    width: 100%;
+    padding: 0;
+    padding-top: 1em;
+    margin: 0;
+  }
+
+
+  a.navbar-item::before {
+    left: 0;
+  }
+
+  #locality{
+    padding: 0;
+    padding-top: 0.5em;
+  }
+
+
+   /***
+    Content beneath Header
+  ***/
+  #maincontent {
+    padding-top: $mobile_header_height;
   }
 }
 
@@ -320,19 +449,10 @@ a.navbar-item:hover::before {
     display: none;
   }
 
-  .hamburger {
-    display: block;
-    cursor: pointer;
-    padding-right: 1em;
-  }
+  
  
+  
 
- /***
-    Content beneath Header
-  ***/
-  #maincontent {
-    padding-top: 6em;
-  }
 
 }
 
@@ -351,33 +471,16 @@ a.navbar-item:hover::before {
     margin-left: 1em;
   }
 
-  .hamburger {
-    display: block;
-    cursor: pointer;
-    padding-right: 1em;
-  }
 
-  #header{
-    flex-direction: column;
-    height: 5em;
-  }
+
+ 
 
 
   #maincontent {
     padding-top: 5em;
   }
 
-  .navbar{
-    flex-direction: column;
-    width: 100%;
-    
-    
-  }
-
-  a.navbar-item{
-    display: block;
-    width: 100%;
-  }
+  
 
   .collapse{
     display: none;

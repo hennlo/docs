@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Happy Jekylling!"
+title: "Release Notes v0.7"
 ---
 
 Test v0.7

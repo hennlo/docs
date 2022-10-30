@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Data Partitioning
+title: Data Partitioning v0.7
 #toc: true
 docs_area: architecture
 ---
