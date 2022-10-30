@@ -337,6 +337,22 @@ a.navbar-item:hover::before {
   }
 
 
+  #header{
+    flex-direction: column;
+    height: $mobile_header_height;
+  }
+
+  #polypheny-right-header{
+    flex-direction: column;
+    width: 100%;
+    background: rgba(0, 255, 255, 0.9);
+    align-items: center;
+
+    z-index: -1;
+    transform: translateY(-150%);
+    transition: transform 0.5s ease-in-out;
+  }
+
   // Navigation Menu
 
   .checkbox {
@@ -346,7 +362,7 @@ a.navbar-item:hover::before {
 
     position: absolute;
     right: 1.1em;
-
+    top: 1.5em;
     width: 34px;
     height: 34px;
     opacity: 0;
@@ -359,6 +375,7 @@ a.navbar-item:hover::before {
     padding-right: 1em;
     position: absolute;
     width: 40px;
+    top: 1.5em;  // See Checkbox
     right: 0.2em;
     z-index: 2;
   }
@@ -378,29 +395,24 @@ a.navbar-item:hover::before {
   transition: transform 0.3s ease-in-out;
 }
 
-#polypheny-left-header input[type="checkbox"]:checked ~ .hamburger .bar1 {
+
+
+#header input[type="checkbox"]:checked ~ .hamburger .bar1 {
   transform: rotate(45deg);
 }
 
-#polypheny-left-header input[type="checkbox"]:checked ~ .hamburger .bar2 {
+#header input[type="checkbox"]:checked ~ .hamburger .bar2 {
   transform: scaleY(0);
 }
 
-#polypheny-left-header input[type="checkbox"]:checked ~ .hamburger .bar3 {
+#header input[type="checkbox"]:checked ~ .hamburger .bar3 {
   transform: rotate(-45deg);
 }
 
-  #header{
-    flex-direction: column;
-    height: $mobile_header_height;
-  }
+#header input[type="checkbox"]:checked ~ #polypheny-right-header{
+  transform: translateY(0);
+}
 
-  #polypheny-right-header{
-    flex-direction: column;
-    width: 100%;
-    background: rgba(0, 255, 255, 0.9);
-    align-items: center;
-  }
 
 
   .navbar{
@@ -409,6 +421,7 @@ a.navbar-item:hover::before {
     text-align: center;
   }
 
+ 
   a.navbar-item{
     display: block;
     width: 100%;
@@ -424,7 +437,8 @@ a.navbar-item:hover::before {
 
   #locality{
     padding: 0;
-    padding-top: 0.5em;
+    padding-top: 1.2em;
+    border-top: 1px solid #D6DBE7;
   }
 
 
