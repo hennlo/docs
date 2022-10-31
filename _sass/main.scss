@@ -309,6 +309,7 @@ a.navbar-item:hover::before {
 
   #sidebarMenu {
     display: block !important;
+    position: relative;
     // Take up 1/6 of the screens width
     flex: 0 0 16.6666666667%;
     max-width: 16.6666666667%;
@@ -334,7 +335,7 @@ a.navbar-item:hover::before {
 
 
 // Mobile Only
-@media screen and (max-width: 992px){
+@media screen and (max-width: 991px){
 
   $mobile_header_height: 5em;
 
@@ -342,14 +343,28 @@ a.navbar-item:hover::before {
     box-shadow: none;
   }
 
-  #sidebarMobile {
+  #sidebar-checkbox {
+    margin: 0;
     display: block;
+    cursor: pointer;
+
+    position: fixed;
+    width: 100%;
+    height: $mobile_header_height/2;
+    top: $mobile_header_height+1em;
+    opacity: 0;
+    z-index: 9998;
+  }
+
+  #sidebarMobile {
+    display: flex;
+    justify-content: center;
     height: $mobile_header_height/2;
     position: fixed;
     top: $mobile_header_height;
     width: 100%;
     
-    z-index: 9998; // Always show on front
+    z-index: 9997; // Always show on front
     
     box-sizing: border-box;
     box-shadow: 0 -6px 10px 5px rgba(34, 34, 34, 0.5); 
@@ -357,17 +372,26 @@ a.navbar-item:hover::before {
     align-items: center;
   }
 
+
   #sidebarMenu {
     height: auto;
     position: fixed;
     z-index: 10;
     background-color: #fff;
-    top: $mobile_header_height/2;
+    top: $mobile_header_height + $mobile_header_height/2;
     border-top: 1px solid #D6DBE7;
     border-bottom: 1px solid #D6DBE7;
     height: 60%;
     overflow: scroll;
     padding-bottom: 15px;
+    transform: translateY(-150%);
+    transition: transform 0.5s ease-in-out;
+  }
+
+
+  #maincontent input[type="checkbox"]:checked ~ #sidebarMenu{
+    transform: translateY(0);
+    opacity: 1;
   }
 
 
@@ -482,8 +506,11 @@ a.navbar-item:hover::before {
     Content beneath Header
   ***/
   #maincontent {
-    padding-top: $mobile_header_height;
+    padding-top: $mobile_header_height/2 + 1em;
   }
+
+
+
 
     // Footer
     .site-footer{
@@ -492,27 +519,12 @@ a.navbar-item:hover::before {
       padding-left: 1em;
       padding-right: 1em;
     }
+
+    .media-600{
+      display: none;
+    }
 }
 
-
-// Tablet
-@media only screen and (min-width: 600px) and (max-width:  992px) {
-
-  
-  .media-600{
-    display: none;
-  }
-
-  .collapse{
-    display: none;
-  }
-
-  
- 
-  
-
-
-}
 
 
 // Phone
@@ -527,22 +539,7 @@ a.navbar-item:hover::before {
     display: block;
     width: 3.5em;
     margin-left: 1em;
-  }
-
-
-
- 
-
-
-  #maincontent {
-    padding-top: 5em;
-  }
-
-  
-
-  .collapse{
-    display: none;
-  }
+  }  
 
   ul.social-media-list {
     display: flex;
@@ -582,7 +579,7 @@ a.navbar-item:hover::before {
   border-right: 1px solid#D5D8DC;
 
 
-  position: relative;
+  
   width: 100%;
   padding-left: 0.8em;
 
