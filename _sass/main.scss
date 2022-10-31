@@ -298,9 +298,13 @@ a.navbar-item:hover::before {
     padding-right: 3rem !important;
   }
 
-  .site-footer{
-    padding-left: 15em;
-    padding-right: 15em;  
+
+  #sidebarMobile{
+    display: none;
+  }
+
+  #sidebar-checkbox{
+    display: none;
   }
 
   #sidebarMenu {
@@ -309,6 +313,19 @@ a.navbar-item:hover::before {
     flex: 0 0 16.6666666667%;
     max-width: 16.6666666667%;
   }
+
+
+
+  .site-footer{
+    padding-left: 20em;
+    padding-right: 15em;  
+  }
+
+
+  ul.social-media-list {
+    flex-direction: row !important;  /* stacks the left and right headers above the bottom content */
+  }
+
 }
 
 
@@ -321,14 +338,31 @@ a.navbar-item:hover::before {
 
   $mobile_header_height: 5em;
 
- 
+  #header {
+    box-shadow: none;
+  }
+
+  #sidebarMobile {
+    display: block;
+    height: $mobile_header_height/2;
+    position: fixed;
+    top: $mobile_header_height;
+    width: 100%;
+    
+    z-index: 9998; // Always show on front
+    
+    box-sizing: border-box;
+    box-shadow: 0 -6px 10px 5px rgba(34, 34, 34, 0.5); 
+    background-color: #fff;
+    align-items: center;
+  }
 
   #sidebarMenu {
     height: auto;
     position: fixed;
     z-index: 10;
     background-color: #fff;
-    top: 108px;
+    top: $mobile_header_height/2;
     border-top: 1px solid #D6DBE7;
     border-bottom: 1px solid #D6DBE7;
     height: 60%;
@@ -348,6 +382,7 @@ a.navbar-item:hover::before {
     background: rgba(0, 255, 255, 0.9);
     align-items: center;
 
+    opacity: 0;
     z-index: -1;
     transform: translateY(-150%);
     transition: transform 0.5s ease-in-out;
@@ -411,6 +446,7 @@ a.navbar-item:hover::before {
 
 #header input[type="checkbox"]:checked ~ #polypheny-right-header{
   transform: translateY(0);
+  opacity: 1;
 }
 
 
@@ -448,6 +484,14 @@ a.navbar-item:hover::before {
   #maincontent {
     padding-top: $mobile_header_height;
   }
+
+    // Footer
+    .site-footer{
+      background-color:gray;
+    
+      padding-left: 1em;
+      padding-right: 1em;
+    }
 }
 
 
@@ -500,12 +544,9 @@ a.navbar-item:hover::before {
     display: none;
   }
 
-  // Footer
-  .site-footer{
-    background-color:gray;
-  
-    padding-left: 2em;
-    padding-right: 2em;
+  ul.social-media-list {
+    display: flex;
+    flex-direction: column;  /* stacks the left and right headers above the bottom content */
   }
 }
 
@@ -618,6 +659,7 @@ a.navbar-item:hover::before {
   //justify-content: space-around;
   align-items:left;
   z-index: 0; // Always show on front
+  
 
 }
 
@@ -646,12 +688,10 @@ a.navbar-item:hover::before {
   flex-direction: column;  /* stacks the left and right headers above the bottom content */
   padding-left: 2em;
   padding-right: 2em;
-  padding-top: 1em;
+  padding-top: 0.5em;
   padding-bottom: 1em;
 
-  flex: 0 0 16.6666666667%;
-  
-
+  flex: 0 0 15%;
 }
 
 
@@ -662,6 +702,7 @@ a.navbar-item:hover::before {
 
 .footer-col > ul {
   padding-left: 0;
+  flex-direction: column;
 }
 
 // Socials Sytling 
@@ -670,12 +711,13 @@ a.navbar-item:hover::before {
 }
 
 ul.social-media-list {
-  list-style: none;
-  
-  
+  list-style: none; 
+  display: flex;
 }
+
 ul.social-media-list > li{
   padding: 0.5em;
+  
   
 }
 

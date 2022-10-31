@@ -1,43 +1,56 @@
 <footer class="site-footer">
     
-        <div class="footer-heading flex-start">{{site.title | escape}}</div>
-        
-        <div class="flex-start">
-            <p>{{ site.description | escape }}</p>
-        </div>
+    <div class="footer-heading flex-start">{{site.title | escape}}</div>
+    
+    <div class="flex-start">
+        <p>{{ site.description | escape }}</p>
+    </div>
 
-        <div class="footer-col-wrapper footer-row">
-            <div class="footer-col footer-col-1">
-                <div class="footer-col-heading"> Contact </div>
-                <ul class="contact-list">
-                    {% if site.contact_email %}
-                        <li><a class="u-email" href="mailto:{{site.contact_email}}">{{ site.contact_email }}</a></li>
-                    {% endif %}
-                </ul>
-            </div>
-            
-
-            <div class="footer-col footer-col-3">
-                <div class="footer-col-heading"> Socials </div>
-                <p>{{ site.description | escape }}</p>
-            </div>
-
-            <div class="footer-col footer-col-4">
-                <div class="footer-col-heading"> Socials </div>
-                <p>{{ site.description | escape }}</p>
-            </div>
-
-            <div class="footer-col footer-col-2"> 
-                <div class="footer-col-heading"> Socials </div>
-                {% include social.html %}
-            </div>
-
+    <div class="footer-col-wrapper footer-row">
+        <div class="footer-col footer-col-1">
+            <div class="footer-col-heading"> Contact </div>
+            <ul class="contact-list">
+                {% if site.contact_email %}
+                    <li><a class="u-email" href="mailto:{{site.contact_email}}">{{ site.contact_email }}</a></li>
+                {% endif %}
+                <li><a class="" href="/imprint">Imprint</a></li>
+            </ul>
         </div>
         
-        <div id="copyright">
-            {% if site.copyright %}
-                &copy; {{ site.copyright }} {{ 'now' | date: "%Y" }}
-            {% endif %}
+
+        <div class="footer-col footer-col-2">
+            <div class="footer-col-heading"> Company </div>
+            <ul >
+                <li><a class="" href="/about">About</a></li>
+                <li><a class="" href="/imprint">Imprint</a></li>
+                <li><a class="" href="/company">Company</a></li>
+                <li><a class="" href="https://blog.polypheny.com">Blog</a></li>
+            </ul>
         </div>
- 
+
+        <div class="footer-col footer-col-3">
+            <div class="footer-col-heading"> Support Channels </div>
+            <ul >
+                {% if site.support_email %}
+                    <li><a class="u-email" href="mailto:{{site.support_email}}">{{ site.support_email }}</a></li>
+                {% endif %}
+                <li><a class="" href="https://github.com/polypheny/Polypheny-DB/issues">Issues</a></li>
+                <li><a class="" href="https://github.com/polypheny/Polypheny-DB/issues/new/choose">Community</a></li>
+                <li><a class="" href="https://discord.com/channels/819939709597122572/819948267739676702">Discord</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col footer-col-4"> 
+            <div class="footer-col-heading"> Socials </div>
+            {% include social.html %}
+        </div>
+
+    </div>
+    
+    <div id="copyright">
+        {% if site.copyright %}
+            &copy; {{ site.copyright }} {{ 'now' | date: "%Y" }}
+        {% endif %}
+    </div>
+
 </footer>

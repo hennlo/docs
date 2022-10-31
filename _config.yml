@@ -43,7 +43,7 @@ github_repository: "polypheny/Polypheny-DB"
 # Jekyll Collections
 collections:
   about:
-    output: true # Set to render files in _pages folder
+    output: true # Set to render files in _about folder
     permalink: /:title/ # Set the format of the permalink by default 
 
 sass:
