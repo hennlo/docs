@@ -7,3 +7,5 @@ _site/
 Gemfile.lock
 vendor/
 todo
+assets/images/utils/world-dark.pngZone.Identifier
+assets/images/utils/world-white.pngZone.Identifier
