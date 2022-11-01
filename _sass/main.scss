@@ -592,7 +592,6 @@ a.navbar-item:hover::before {
   padding-top: 1rem !important;
   border-right: 1px solid#D5D8DC;
 
-
   
   width: 100%;
   padding-left: 0.8em;
@@ -658,6 +657,54 @@ a.navbar-item:hover::before {
   margin-bottom: 0;
   list-style: none;
   line-height: 22.6px;
+}
+
+hr.sidebar-group-divider{
+  height: 1px;
+  width: 90%;
+  border: none;
+  background-color: #D5D8DC;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  box-sizing: content-box;
+  padding:0;
+  padding-left:1em;
+  
+}
+
+.sidebar ul{
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.sidebar ul a{
+  width: 85%;
+  display: block;
+  border-radius: 4px;
+  padding: 0.3em;
+}
+
+.sidebar .sidebar-group{
+  margin: 0;
+  margin-bottom: 0.3em;;
+}
+
+.sidebar ul.top-tier .tier-1{
+  margin-bottom: 0.5em;
+}
+
+.sidebar .top-tier a:hover{
+  background-color: rgba(168, 167, 167, 0.5); 
+}
+
+.sidebar .top-tier a:active{
+  background-color: rgba(117, 113, 113, 0.5); 
+  background-color: rgba(206, 16, 16, 0.5);
+}
+
+.sidebar li.tier-2 {
+  padding-left: 1em;
 }
 
 .col-sidebar .stiky-spacer {

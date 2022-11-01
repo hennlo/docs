@@ -1,0 +1,80 @@
+# The Nav Items are first grouped then listedb by topic and sub topic
+# Each Group will be separated by a horizontal line
+
+
+#######
+# Group
+start:
+
+  overview:
+    identifier: overview
+    name: Overview
+    url: overview
+
+  getting_started:
+    identifier: getting_started
+    name: Getting Started
+
+    subfolderitems:
+      setup:
+        identifier: setup
+        name: Setup
+        url: 
+
+      data_types:
+        identifier: data_types
+        name: Data Types
+        url: 
+
+
+#######
+# Group
+architecture:
+
+# Topic
+  schema_model:
+    identifier: schema_model
+    name: Schema Model
+
+    subfolderitems:
+      basics:
+        identifier: basics
+        name: Basics
+        url: 
+
+      data_partitioning:
+        identifier: data_partitioning
+        name: Data Partitioning
+        url: data-partitioning
+
+      views:
+        identifier: views
+        name: Views
+        url:
+
+# Topic
+  data_storage:
+    identifier: data_storage
+    name: Data Storage
+
+
+#######
+# Group
+interfaces:
+
+# Topic
+  query_languages:
+    identifier: query_languages
+    name: Query Languages
+
+# Topic
+  connectors:
+    identifier: connectors
+    name: Connectors & Drivers
+
+    subfolderitems:
+      python-connector:
+        identifier: python-connector
+        name: Python Connector
+        url: python-connector
+

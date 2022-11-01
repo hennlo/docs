@@ -1,11 +1,17 @@
 ---
 layout: default
 title: "Home"
+homepage: true
 ---
 
 ## You're ready to go!
 
 Start developing your Jekyll website.
+
+### Current Versions
+{% for version in site.data.versions %}
+    {{ version.name }}
+{% endfor %}
 
 ----
 

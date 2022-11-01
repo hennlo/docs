@@ -1,8 +1,6 @@
 <!-- Main Menu navigation -->
 <div class="navbar-list">
-    <a class="navbar-item" href="#">Product</a>
-    <a class="navbar-item" href="#">Solutions</a>
-    <a class="navbar-item" href="#">Pricing</a>
-    <a class="navbar-item" href="#">Resources</a>
-    <a class="navbar-item" href="#">Company</a>
+    {% for nav-item in site.data.top-nav %}
+        <a class="navbar-item" href="{{ nav-item[1].url }}">{{ nav-item[1].identifier }}</a>
+    {% endfor %}
 </div>

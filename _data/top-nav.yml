@@ -1,0 +1,24 @@
+product:
+  identifier: product
+  name: Product
+  url: /product
+
+solutions:
+  identifier: solutions
+  name: Solutions
+  url: /solutions
+
+pricing:
+  identifier: pricing
+  name: Pricing
+  url: /pricing
+
+resources:
+  identifier: resources
+  name: Resources
+  url: /resources
+
+company:
+  identifier: company
+  name: Company
+  url: /company

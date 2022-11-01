@@ -12,65 +12,36 @@
                 <form action="/search.html">
                     <input class="form-control" name="query" type="text" placeholder="Search...">
                 </form>
-            </div>
+            </div>       
+            
+            <!-- Pick specified page version or teh stable the current stable version if nothing else is set -->
+            {% assign current_version = {{ page.version  | default: site.versions["stable"] }} %}
+            
             <div class="sidebar">
-                <a href="#">Getting Started</a>
-                <a href="#">Schema Model</a>
-                <a href="#">Query Languages</a>
-                <a href="#">Data Storage Adapters</a>
-                <a href="#">Query Languages</a>
-                <a href="#">Connectros & Drivers</a>
-                <a href="#">Developer Guidelines</a>
-                <a href="#">Getting Started</a>
-                <a href="#">Schema Model</a>
-                <a href="#">Query Languages</a>
-                <a href="#">Data Storage Adapters</a>
-                <a href="#">Query Languages</a>
-                <a href="#">Connectros & Drivers</a>
-                <a href="#">Developer Guidelines</a>
-                <a href="#">Getting Started</a>
-                <a href="#">Schema Model</a>
-                <a href="#">Query Languages</a>
-                <a href="#">Data Storage Adapters</a>
-                <a href="#">Query Languages</a>
-                <a href="#">Connectros & Drivers</a>
-                <a href="#">Developer Guidelines</a>
-                <a href="#">Getting Started</a>
-                <a href="#">Schema Model</a>
-                <a href="#">Query Languages</a>
-                <a href="#">Data Storage Adapters</a>
-                <a href="#">Query Languages</a>
-                <a href="#">Connectros & Drivers</a>
-                <a href="#">Developer Guidelines</a>
-                <a href="#">Getting Started</a>
-                <a href="#">Schema Model</a>
-                <a href="#">Query Languages</a>
-                <a href="#">Data Storage Adapters</a>
-                <a href="#">Query Languages</a>
-                <a href="#">Connectros & Drivers</a>
-                <a href="#">Developer Guidelines</a>
-                <a href="#">Getting Started</a>
-                <a href="#">Schema Model</a>
-                <a href="#">Query Languages</a>
-                <a href="#">Data Storage Adapters</a>
-                <a href="#">Query Languages</a>
-                <a href="#">Connectros & Drivers</a>
-                <a href="#">Developer Guidelines</a>
-                <a href="#">Getting Started</a>
-                <a href="#">Schema Model</a>
-                <a href="#">Query Languages</a>
-                <a href="#">Data Storage Adapters</a>
-                <a href="#">Query Languages</a>
-                <a href="#">Connectros & Drivers</a>
-                <a href="#">Developer Guidelines</a>
-                <a href="#">Getting Started</a>
-                <a href="#">Schema Model</a>
-                <a href="#">Query Languages</a>
-                <a href="#">Data Storage Adapters</a>
-                <a href="#">Query Languages</a>
-                <a href="#">Connectros & Drivers</a>
-                <a href="#">Developer Guidelines</a>
-
+                <ul class="sidebar-group">
+                    <!-- Arrange Groups-->
+                    {% for group in site.data.side-nav %}
+                        <h4 class="sidebar-group">{{group[0] | capitalize}}</h4>
+                    
+                        <!-- Top Tier List-->
+                        <ul class="top-tier">
+                            {% for nav-item in group[1] %}
+                                <li class="tier-1" ><a href="#">{{ nav-item[1].name }}</a>
+                                
+                                <!-- Sub List-->
+                                
+                                    <ul>
+                                        {% for tier-2 in nav-item[1]['subfolderitems'] %}
+                                            <li class="tier-2" ><a href="/{{ current_version }}/{{ tier-2[1].url }}">{{ tier-2[1].name }}</a></li>
+                                        {% endfor %}
+                                    </ul>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    
+                        <hr class="sidebar-group-divider">
+                    {% endfor %}
+                </ul>
             </div>
         </div>
         <div class="stiky-spacer">
