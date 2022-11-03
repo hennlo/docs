@@ -17,6 +17,8 @@ default_lang: en
 
 # Custom Settings
 
+markdown: Redcarpet
+
 ## Versioning
 versions:
   stable: v0.8
