@@ -134,8 +134,15 @@ code{
   color: whitesmoke;
   font-size: 0.9em;
 }
+
 pre {
   background-color: "#282C34";
   color: whitesmoke;
-  padding: 1em 2.5em;
+  padding: 1em 2em;
+}
+
+// Language specifics
+.language-sql::before {
+    color: #a2a2a2;
+    content: "> ";
 }
