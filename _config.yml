@@ -18,6 +18,7 @@ default_lang: en
 # Custom Settings
 
 markdown: kramdown
+highlighter: rouge
 kramdown:
   syntax_highlighter: rouge
 
