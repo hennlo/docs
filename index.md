@@ -16,6 +16,18 @@ Start developing your Jekyll website.
 ----
 
 
+~~~ sql
+> GRANT ALL ON DATABASE movr TO max WITH GRANT OPTION;
+~~~
+
+``` sql
+> GRANT ALL ON DATABASE movr TO max WITH GRANT OPTION;
+```
+
+``` sql
+GRANT ALL ON DATABASE movr TO max WITH GRANT OPTION;
+```
+
 Billing Management
 
 The Billing page contains an overview of your charges and the payment details on file for your CockroachDB Cloud organization. To view the Billing page, log in and click Billing.
