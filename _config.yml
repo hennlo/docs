@@ -18,6 +18,8 @@ default_lang: en
 # Custom Settings
 
 markdown: kramdown
+kramdown:
+  syntax_highlighter: coderay
 
 ## Versioning
 versions:
