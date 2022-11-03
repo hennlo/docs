@@ -45,7 +45,7 @@ main {
   flex-grow: 1;  /* ensures that the container will take up the full height of the parent container */
   background-color: orange;
   z-index: 0;
-  padding: 3em;
+  padding: 3em 1.5em;
   overflow-x: hidden;  // Make parent container non-scrolable
   width: 100%; // Content Page is always filled
   position: relative;

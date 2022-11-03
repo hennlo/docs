@@ -133,12 +133,16 @@ code{
   background-color: "#282C34";
   color: whitesmoke;
   font-size: 0.9em;
+
+  padding-right: 1em;
 }
 
 pre {
   background-color: "#282C34";
   color: whitesmoke;
   padding: 1em 2em;
+
+  overflow-x: auto;
 }
 
 // Language specifics
