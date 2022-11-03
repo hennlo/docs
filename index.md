@@ -16,10 +16,6 @@ Start developing your Jekyll website.
 ----
 
 
-~~~ sql
-> GRANT ALL ON DATABASE movr TO max WITH GRANT OPTION;
-~~~
-
 ``` sql
 > GRANT ALL ON DATABASE movr TO max WITH GRANT OPTION;
 ```
