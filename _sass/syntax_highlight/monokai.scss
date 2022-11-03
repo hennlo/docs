@@ -142,7 +142,7 @@ pre {
 }
 
 // Language specifics
-.language-sql::before {
+.language-sql code::before{
     color: #a2a2a2;
     content: "> ";
 }
