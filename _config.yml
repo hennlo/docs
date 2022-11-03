@@ -19,7 +19,7 @@ default_lang: en
 
 markdown: kramdown
 kramdown:
-  syntax_highlighter: coderay
+    syntax_highlighter: rouge
 
 ## Versioning
 versions:
