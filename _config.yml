@@ -17,7 +17,7 @@ default_lang: en
 
 # Custom Settings
 
-markdown: Redcarpet
+markdown: kramdown
 
 ## Versioning
 versions:
