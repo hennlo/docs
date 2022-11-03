@@ -2,7 +2,8 @@ $background: #242a35;
 
 .highlight {
   background-color: $background;    
-  border-radius: 4px;  
+  border-radius: 4px;
+  
 
   .hll {
     background-color: #49483e;
@@ -134,4 +135,5 @@ code{
 pre {
   background-color: "#282C34";
   color: whitesmoke;
+  padding: 20px 30px;
 }
