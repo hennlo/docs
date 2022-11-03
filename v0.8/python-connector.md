@@ -19,9 +19,9 @@ import polypheny
 ```
 
 Establish a connection:
-{% highlight python %}
+```python
 connection = polypheny.connect('localhost', 20591, user='pa', password='')
-{% endhighlight %}
+```
 
 ## Interacting with Polypheny-DB
 
