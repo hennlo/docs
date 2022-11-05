@@ -346,6 +346,10 @@ a.navbar-item:hover::before {
   padding: 0 1em;
 }
 
+.mobile-toc-divider{
+  display: none;
+}
+
   .site-footer{
     padding-left: 20em;
     padding-right: 15em;  
@@ -552,7 +556,9 @@ a.navbar-item:hover::before {
     padding-top: $mobile_header_height/2 + 1em;
   }
 
-
+  .mobile-toc-divider{
+    display: block;
+  }
 
 
     // Footer
