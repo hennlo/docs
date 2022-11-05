@@ -20,6 +20,7 @@ default_lang: en
 markdown: kramdown
 highlighter: rouge
 kramdown:
+  parse_block_html: true
   syntax_highlighter: rouge
 
 ## Versioning
@@ -55,3 +56,6 @@ sass:
     sass_dir: _sass
 
 
+# Plugins
+plugins:
+  - jekyll-toc

@@ -1,14 +1,13 @@
 ---
-layout: default
+layout: page
 title:  Using the Python Connector
+toc: true
 ---
 
 This topic provides a series of examples that illustrate how to use the Python Connector to perform standard operations such as user login, table creation, data insertion, and querying.
 
 The sample code at the end of this topic combines the examples into a single, working Python program.
 
-* this unordered seed list will be replaced by toc as unordered list
-{:toc}
 
 
 ## Connecting to Polypheny-DB

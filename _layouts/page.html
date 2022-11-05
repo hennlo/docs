@@ -1,38 +1,18 @@
 ---
 layout: default
 ---
-<div class="cf-5329-area-16739"></div>
 
 <h1>{{ page.title }}</h1>
 
 {% unless page.homepage %}
   {% if page.version %}
-    {% include version-switcher.html %}
+   {% comment %} {% include version-switcher.html %}{% endcomment %}
   {% endif %}
 {% endunless %}
 
 {% comment %} Show the version switcher only if 1) the current page has a version and 2) the current page isn't the home page of the docs. {% endcomment %}
 
-{% if page.homepage != true %}
-    {% assign post_header_class = "post-header mb-3" %}
-    {% unless page.homepage %}
-      {% unless page.version %}
-       {% assign post_header_class = post_header_class | append:  " mt-5" %}
-      {% endunless %}
-    {% endunless %}
-  <div class="{{ post_header_class }}">
-    <h1 class="post-title-main w-100">{{ page.title }}</h1>
-    {% unless page.contribute == false %}
-      {% assign toc_classes = 'd-block ' %}
-      {% unless page.toc == false %}
-        {% assign toc_classes = toc_classes | append: 'd-lg-none' %}
-      {% endunless %}
-      <div class="{{toc_classes}}">
-        {% include contribute-options.html %}
-      </div>
-    {% endunless %}
-  </div>
-  {% endif %}
+
 
 {% comment %} If the page supports it, show the contribution options. {% endcomment %}
 
@@ -43,13 +23,18 @@ layout: default
     front-matter.
     {% endcomment %}
     {% if page.toc %}
-      <div id="mobile-toc-toggler" class="d-inline-block d-lg-none mb-4">
-        On this page <span class="carat-arrow-down d-inline-flex"><img src="/assets/images/utils/carat-down-fill.svg" alt="Carat arrow pointing down"></span>
+      
+      <div id="toc-wrapper">
+        <div class="toc-heading">
+          On this page
+        </div>
+        <div class="toc-content">
+          {{ content | toc_only }}
+        </div>
       </div>
-      <div id="toc" class="d-none"></div>
     {% endif %}
     
-    {{content}}
-
+ 
+    {{ content | inject_anchors }}
     
     </div>

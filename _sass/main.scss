@@ -804,3 +804,40 @@ ul.social-media-list > li{
   font-size: 0.9em;
 }
 /****/
+
+
+
+/**
+**
+ TOC STyling
+**
+ **/
+
+#toc-wrapper{
+  background-color: violet;
+  //position: relative;
+  // Take up 1/6 of the screens width
+  flex: 0 0 16.6666666667%;
+  max-width: 16.6666666667;
+  
+}
+
+#toc-wrapper ul{
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9em;
+}
+
+a.anchor:hover{
+  color: green;
+}
+
+
+.section-nav {
+  background-color: #fff;
+  margin: 5px 0;
+  padding: 10px 30px;
+  border: 1px solid #e8e8e8;
+  border-radius: 3px;
+}
+/****/
