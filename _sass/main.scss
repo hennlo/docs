@@ -12,6 +12,7 @@ $header_height: 5em;
 
 html {
   height: 100%;
+  
 }
 
 
@@ -41,12 +42,10 @@ ul {
 }
 
 main {
-  overflow-y: auto;  // Adds disbaled scrollbar from parent: "container" back for main content
   flex-grow: 1;  /* ensures that the container will take up the full height of the parent container */
   background-color: orange;
   z-index: 0;
-  padding: 3em 1.5em;
-  overflow-x: hidden;  // Make parent container non-scrolable
+  padding: 2em 1.5em;
   width: 100%; // Content Page is always filled
   position: relative;
   flex-wrap: wrap;
@@ -294,7 +293,7 @@ a.navbar-item:hover::before {
     flex: 0 0 83.3333333333%;
     max-width: 83.3333333333%;
 
-    padding-left: 3rem !important;
+    padding-left: 5rem !important;
     padding-right: 3rem !important;
   }
 
@@ -316,6 +315,36 @@ a.navbar-item:hover::before {
   }
 
 
+  /**
+**
+ TOC STyling
+**
+ **/
+
+ .post-content {
+  display: flex;
+  justify-content: center;
+  
+  // Only on mobile
+  //flex-direction: column;
+}
+
+.page-content {
+  order: 1;
+  padding-right: 4em;
+}
+
+#toc-wrapper{
+
+  height: 100%;
+  position: sticky;
+  display: block !important;
+  // Take up 1/6 of the screens width
+  flex: 0 0 16.6666666667%;
+  order: 2;
+  top: 14em;
+  padding: 0 1em;
+}
 
   .site-footer{
     padding-left: 20em;
@@ -807,25 +836,23 @@ ul.social-media-list > li{
 
 
 
-/**
-**
- TOC STyling
-**
- **/
 
-#toc-wrapper{
-  background-color: violet;
-  //position: relative;
-  // Take up 1/6 of the screens width
-  flex: 0 0 16.6666666667%;
-  max-width: 16.6666666667;
-  
-}
 
-#toc-wrapper ul{
+.toc-content ul{
   display: flex;
   flex-direction: column;
   font-size: 0.9em;
+}
+
+#toc-list{
+  border-left: 1px solid #c2c5cb;
+  padding-left: 1em;
+}
+
+.toc-heading{
+  text-align: left;
+  font-size: 0.9em; 
+  font-weight: 600;
 }
 
 
@@ -841,14 +868,6 @@ a.anchor:hover{
   opacity: 1;
 }
 
-
-.section-nav {
-  background-color: #fff;
-  margin: 5px 0;
-  padding: 10px 30px;
-  border: 1px solid #e8e8e8;
-  border-radius: 3px;
-}
 /****/
 
 

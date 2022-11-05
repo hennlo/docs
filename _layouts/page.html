@@ -25,20 +25,23 @@ layout: default
     {% if page.toc %}
       
       <div id="toc-wrapper">
-        <div class="toc-heading">
-          On this page
-        </div>
-        <div class="toc-content ">
-          {% include toc.html html=content id="toc-list" %}
+        <div class="toc-container">
+          <div class="toc-heading">
+            On this page
+          </div>
+          <div class="toc-content ">
+            {% include toc.html html=content id="toc-list" %}
+          </div>
         </div>
       </div>
     {% endif %}
     
-    {% if page.disable_anchor_heading == true %}
-        {% comment %} Next line is only needed if the include disable_anchor_heading is disabled per content page {% endcomment %}
-        {{ content }}
-      {% else %}
-        {% include anchor_headings.html html=content anchorClass="anchor" %}
-    {% endif %}
-
+    <div class="page-content">
+        {% if page.disable_anchor_heading == true %}
+            {% comment %} Next line is only needed if the include disable_anchor_heading is disabled per content page {% endcomment %}
+            {{ content }}
+          {% else %}
+            {% include anchor_headings.html html=content anchorClass="anchor" %}
+        {% endif %}
+      </div>
     </div>
