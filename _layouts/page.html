@@ -28,13 +28,17 @@ layout: default
         <div class="toc-heading">
           On this page
         </div>
-        <div class="toc-content">
-          {{ content | toc_only }}
+        <div class="toc-content ">
+          {% include toc.html html=content id="toc-list" %}
         </div>
       </div>
     {% endif %}
     
- 
-    {{ content | inject_anchors }}
-    
+    {% if page.disable_anchor_heading == true %}
+        {% comment %} Next line is only needed if the include disable_anchor_heading is disabled per content page {% endcomment %}
+        {{ content }}
+      {% else %}
+        {% include anchor_headings.html html=content anchorClass="anchor" %}
+    {% endif %}
+
     </div>

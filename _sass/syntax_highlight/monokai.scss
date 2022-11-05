@@ -131,10 +131,20 @@ $background: #242a35;
 
 code{
   background-color: "#282C34";
-  color: whitesmoke;
-  font-size: 0.9em;
 
-  padding-right: 1em;
+
+}
+
+// Associates with single inline backticks e.g. `code_element`
+p code{
+  border-radius: 4px;
+  padding: 2px 4px;
+
+  background-color: #fafafa;
+  color: #475872;
+
+  border: 1px solid hsla(222,8%,43%,.2);
+  font-size: .8125rem;
 }
 
 pre {
@@ -143,6 +153,13 @@ pre {
   padding: 1em 2em;
 
   overflow-x: auto;
+
+  code{
+    color: whitesmoke;
+    
+  
+    padding-right: 1em;
+  }
 }
 
 // Language specifics

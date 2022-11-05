@@ -2,6 +2,7 @@
 layout: page
 title:  Using the Python Connector
 toc: true
+disable_anchor_heading: false
 ---
 
 This topic provides a series of examples that illustrate how to use the Python Connector to perform standard operations such as user login, table creation, data insertion, and querying.

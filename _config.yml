@@ -54,8 +54,3 @@ collections:
 
 sass:
     sass_dir: _sass
-
-
-# Plugins
-plugins:
-  - jekyll-toc

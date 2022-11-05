@@ -828,8 +828,17 @@ ul.social-media-list > li{
   font-size: 0.9em;
 }
 
+
+a.anchor{
+  opacity: 0.3;
+  content: url('../images/utils/link.png');
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+}
+
 a.anchor:hover{
-  color: green;
+  opacity: 1;
 }
 
 
@@ -841,3 +850,6 @@ a.anchor:hover{
   border-radius: 3px;
 }
 /****/
+
+
+
