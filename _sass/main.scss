@@ -259,8 +259,6 @@ a.navbar-item:hover::before {
 // Desktop Only
 @media only screen and (min-width: 992px) {
 
-  $sidebar-width: 20em;
-
 
   .home-logo{
     width: 12em;
@@ -305,7 +303,8 @@ a.navbar-item:hover::before {
     padding-left: 5rem !important;
     padding-right: 3rem !important;
 
-    max-width: calc(100vw - (100vw - 100%) - 20em);
+    // 20em are from $sidebar-width
+    max-width: calc(100vw - (100vw - 100%) - #{$sidebar-width});
   }
 
 
