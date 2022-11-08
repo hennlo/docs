@@ -2,6 +2,9 @@ $backgroundColor: #ffffff;
 $bodyColor: #000000;
 $bodyFont: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 $header_height: 5em;
+
+$sidebar-width: 20em;
+
 /***
   General HTML Styling
 ***/
@@ -256,6 +259,9 @@ a.navbar-item:hover::before {
 // Desktop Only
 @media only screen and (min-width: 992px) {
 
+  $sidebar-width: 20em;
+
+
   .home-logo{
     width: 12em;
     margin-left: 1em;
@@ -290,11 +296,16 @@ a.navbar-item:hover::before {
 
 
   main{
-    flex: 0 0 83.3333333333%;
-    max-width: 83.3333333333%;
+    //flex: 0 0 83.3333333333%;
+    //max-width: 83.3333333333%;
+
+    flex-shrink: 0;
+    flex-grow: 0;
 
     padding-left: 5rem !important;
     padding-right: 3rem !important;
+
+    max-width: calc(100vw - (100vw - 100%) - 20em);
   }
 
 
@@ -310,8 +321,8 @@ a.navbar-item:hover::before {
     display: block !important;
     position: relative;
     // Take up 1/6 of the screens width
-    flex: 0 0 16.6666666667%;
-    max-width: 16.6666666667%;
+    flex: 0 0 $sidebar-width; 
+    //max-width: 16.6666666667%;
   }
 
 
@@ -332,6 +343,7 @@ a.navbar-item:hover::before {
 .page-content {
   order: 1;
   padding-right: 4em;
+  max-width: 83.3333333337%;
 }
 
 #toc-wrapper{
@@ -553,9 +565,10 @@ a.navbar-item:hover::before {
     Content beneath Header
   ***/
   #maincontent {
-    padding-top: $mobile_header_height/2 + 1em;
+    padding-top: $mobile_header_height/2 + 2em;
   }
 
+  
   .mobile-toc-divider{
     display: block;
   }
