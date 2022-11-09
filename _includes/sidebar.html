@@ -1,3 +1,5 @@
+
+
 <!-- Side navigation -->
 <input type="checkbox" id="sidebar-checkbox">
 <div id="sidebarMobile">
@@ -26,14 +28,14 @@
                         <!-- Top Tier List-->
                         <ul class="top-tier">
                             {% for nav-item in group[1] %}
-                                <li class="tier-1 unfolded" >
+                                <li class="tier-1 dropdown" >
                                     
 
                                         <!-- Add Dropdown Arrow if nested List -->
                                         {% if nav-item[1]['subfolderitems'].size >= 1  %}
-                                        <a href="#" class="sidebar-item">{{ nav-item[1].name }}    
-                                            <div class="sidebar-nested-arrow"></div>
-                                        </a>
+                                            <a href="#" class="sidebar-item">{{ nav-item[1].name }}    
+                                                <div class="sidebar-nested-arrow"></div>
+                                            </a>
                                         {% else %}
                                             <a href="#" class="sidebar-item">{{ nav-item[1].name }}</a>
                                         {%endif%}
@@ -43,10 +45,13 @@
                                     <ul class="sidebar-sublist">
                                         {% for tier-2 in nav-item[1]['subfolderitems'] %}
                                             <li class="tier-2" >
-                                                <a href="/{{ current_version }}/{{ tier-2[1].url }}" class="sidebar-item">{{ tier-2[1].name }}
                                                     <!-- Add Dropdown Arrow if nested List -->
                                                     {% if tier-2[1]['subfolderitems'].size >= 1 %}
-                                                        <div class="sidebar-nested-arrow"></div>
+                                                        <a href="/{{ current_version }}/{{ tier-2[1].url }}" class="sidebar-item dropdown">{{ tier-2[1].name }}
+                                                            <div class="sidebar-nested-arrow"></div>
+                                                        </a>
+                                                    {% else %}
+                                                    <a href="/{{ current_version }}/{{ tier-2[1].url }}" class="sidebar-item">{{ tier-2[1].name }}
                                                     {%endif%}
                                                 </a>
                                             </li>
@@ -66,3 +71,4 @@
         </div>
     </div>
 </nav>
+<script src="/assets/js/sidebar-collapsible-list.js"></script>

@@ -737,14 +737,10 @@ hr.sidebar-group-divider{
 }
 
 
-ul.top-tier ul.sidebar-sublist {
-  display: none;
-}
-
-
-
-.sidebar .unfolded:active ul.sidebar-sublist{
-  display: block;
+.sidebar ul .sidebar-sublist {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
 }
 
 
