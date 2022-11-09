@@ -719,6 +719,36 @@ hr.sidebar-group-divider{
   
 }
 
+.sidebar-item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 0.5em !important;
+}
+
+.sidebar-nested-arrow{
+
+  border: solid black;
+  border-width: 0 1px 1px 0;
+  padding: 3px;
+  display: inline-block;
+  transition: transform 0.3s ease-in-out;
+  transform: rotate(-45deg);
+}
+
+
+ul.top-tier ul.sidebar-sublist {
+  display: none;
+}
+
+
+
+.sidebar .unfolded:active ul.sidebar-sublist{
+  display: block;
+}
+
+
+
 .sidebar ul{
   display: flex;
   flex-direction: column;
@@ -726,8 +756,8 @@ hr.sidebar-group-divider{
 }
 
 .sidebar ul a{
-  width: 85%;
-  display: block;
+  width: 90%;
+  //display: block;
   border-radius: 4px;
   padding: 0.3em;
 }
