@@ -724,6 +724,7 @@ hr.sidebar-group-divider{
   align-items: center;
   justify-content: space-between;
   padding-right: 0.5em !important;
+  cursor: pointer;
 }
 
 .sidebar-item.active{
@@ -767,11 +768,8 @@ hr.sidebar-group-divider{
   margin-bottom: 0.3em;;
 }
 
-.sidebar ul.top-tier .tier-1{
-  margin-bottom: 0.5em;
-}
 
-.sidebar .top-tier a:hover{
+.sidebar #top-tier a:hover{
   background-color: rgba(168, 167, 167, 0.5); 
 }
 

@@ -25,39 +25,55 @@
                     {% for group in site.data.side-nav %}
                         <h4 class="sidebar-group">{{group[0] | capitalize}}</h4>
                     
-                        <!-- Top Tier List-->
-                        <ul class="top-tier">
+                        <!-- Top Tier List Currently allows only nested level of 2 until tier-3-->
+                        <ul id="top-tier">
                             {% for nav-item in group[1] %}
                                 <li class="tier-1" >
                                     
-
                                         <!-- Add Dropdown Arrow if nested List -->
-                                        {% if nav-item[1]['subfolderitems'].size >= 1  %}
-                                            <a href="#" class="sidebar-item dropdown">{{ nav-item[1].name }}    
+                                        {% if nav-item[1].subfolderitems.size >= 1  %}
+                                            <a  class="sidebar-item dropdown">{{ nav-item[1].name }}    
                                                 <div class="sidebar-nested-arrow"></div>
                                             </a>
+
+                                            <!-- Sub List-->
+                                            <ul class="sidebar-sublist">
+                                                {% for tier-2 in nav-item[1].subfolderitems %}
+                                                    <li class="tier-2" >
+
+                                                        
+                                                            <!-- Add Dropdown Arrow if nested List -->
+                                                            {% if tier-2[1].subfolderitems.size >= 1 %}
+                                                                <a class="sidebar-item dropdown">{{ tier-2[1].name }}
+                                                                    <div class="sidebar-nested-arrow"></div>
+                                                                </a>
+                                                                <!-- Sub List-->
+                                                                <ul class="sidebar-sublist">
+                                                                    {% for tier-3 in tier-2[1].subfolderitems %}
+                                                                        <li class="tier-3" >
+                                                                            ++{{tier-2[1].subfolderitems}}
+                                                                                <!-- Add Dropdown Arrow if nested List -->
+                                                                                {% if tier-3[1].subfolderitems.size >= 1 %}
+                                                                                    <a class="sidebar-item dropdown">{{ tier-3[1].name }}
+                                                                                        <div class="sidebar-nested-arrow"></div>
+                                                                                    </a>
+                                                                                {% else %}
+                                                                                <a href="/{{ current_version }}/{{ tier-3[1].url }}" class="sidebar-item sidebar-leaf">{{ tier-3[1].name }}</a>
+                                                                                {%endif%}
+                                                                        </li>
+                                                                        
+                                                                    {% endfor %}
+                                                                </ul>
+
+                                                            {% else %}
+                                                            <a href="/{{ current_version }}/{{ tier-2[1].url }}" class="sidebar-item sidebar-leaf">{{ tier-2[1].name }}</a>
+                                                            {%endif%}
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
                                         {% else %}
                                             <a href="#" class="sidebar-item sidebar-leaf">{{ nav-item[1].name }}</a>
                                         {%endif%}
-                                    
-                                
-                                <!-- Sub List-->
-                                    <ul class="sidebar-sublist">
-                                        {% for tier-2 in nav-item[1]['subfolderitems'] %}
-                                            <li class="tier-2" >
-                                                    <!-- Add Dropdown Arrow if nested List -->
-                                                    {% if tier-2[1]['subfolderitems'].size >= 1 %}
-                                                        <a href="/{{ current_version }}/{{ tier-2[1].url }}" class="sidebar-item dropdown">{{ tier-2[1].name }}
-                                                            <div class="sidebar-nested-arrow"></div>
-                                                        </a>
-                                                    {% else %}
-                                                    <a href="/{{ current_version }}/{{ tier-2[1].url }}" class="sidebar-item sidebar-leaf">{{ tier-2[1].name }}
-                                                    {%endif%}
-                                                </a>
-                                            </li>
-                                            
-                                        {% endfor %}
-                                    </ul>
                                 </li>
                             {% endfor %}
                         </ul>

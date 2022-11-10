@@ -73,8 +73,32 @@ interfaces:
     name: Connectors & Drivers
 
     subfolderitems:
-      python-connector:
-        identifier: python-connector
-        name: Python Connector
-        url: python-connector
+      python:
+        identifier: python
+        name: Python
 
+        subfolderitems:
+          install:
+            identifier: install
+            name: install
+            url: install
+
+          python-connector:
+            identifier: python-connector
+            name: Python Connector
+            url: python-connector
+
+      java:
+        identifier: java
+        name: Java
+
+        subfolderitems:
+          install:
+            identifier: install
+            name: install
+            url: install
+
+          python-connector:
+            identifier: jdbc
+            name: JDBC
+            url: jdbc
