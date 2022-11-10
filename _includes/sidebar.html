@@ -28,16 +28,16 @@
                         <!-- Top Tier List-->
                         <ul class="top-tier">
                             {% for nav-item in group[1] %}
-                                <li class="tier-1 dropdown" >
+                                <li class="tier-1" >
                                     
 
                                         <!-- Add Dropdown Arrow if nested List -->
                                         {% if nav-item[1]['subfolderitems'].size >= 1  %}
-                                            <a href="#" class="sidebar-item">{{ nav-item[1].name }}    
+                                            <a href="#" class="sidebar-item dropdown">{{ nav-item[1].name }}    
                                                 <div class="sidebar-nested-arrow"></div>
                                             </a>
                                         {% else %}
-                                            <a href="#" class="sidebar-item">{{ nav-item[1].name }}</a>
+                                            <a href="#" class="sidebar-item sidebar-leaf">{{ nav-item[1].name }}</a>
                                         {%endif%}
                                     
                                 
@@ -51,7 +51,7 @@
                                                             <div class="sidebar-nested-arrow"></div>
                                                         </a>
                                                     {% else %}
-                                                    <a href="/{{ current_version }}/{{ tier-2[1].url }}" class="sidebar-item">{{ tier-2[1].name }}
+                                                    <a href="/{{ current_version }}/{{ tier-2[1].url }}" class="sidebar-item sidebar-leaf">{{ tier-2[1].name }}
                                                     {%endif%}
                                                 </a>
                                             </li>
