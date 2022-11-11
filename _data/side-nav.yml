@@ -1,6 +1,7 @@
 # The Nav Items are first grouped then listedb by topic and sub topic
 # Each Group will be separated by a horizontal line
 
+#identifiers must be truly unique
 
 #######
 # Group
@@ -63,11 +64,6 @@ architecture:
 interfaces:
 
 # Topic
-  query_languages:
-    identifier: query_languages
-    name: Query Languages
-
-# Topic
   connectors:
     identifier: connectors
     name: Connectors & Drivers
@@ -80,7 +76,7 @@ interfaces:
         subfolderitems:
           install:
             identifier: install
-            name: install
+            name: Install
             url: install
 
           python-connector:
@@ -95,10 +91,42 @@ interfaces:
         subfolderitems:
           install:
             identifier: install
-            name: install
+            name: Install
             url: install
 
           python-connector:
             identifier: jdbc
             name: JDBC
             url: jdbc
+
+# Topic
+  query_languages:
+    identifier: query_languages
+    name: Query Languages
+
+    subfolderitems:
+      sql:
+        identifier: sql
+        name: SQL
+
+        subfolderitems:
+          basics:
+            identifier: basics
+            name: Basics
+
+          syntax:
+            identifier: Syntax
+            name: Syntax
+
+      mogoql:
+        identifier: mongoql
+        name: MongoQL
+
+        subfolderitems:
+          basics:
+            identifier: basics
+            name: Basics
+
+          syntax:
+            identifier: Syntax
+            name: Syntax

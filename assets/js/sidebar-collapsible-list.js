@@ -9,39 +9,92 @@ for (i = 0; i < coll.length; i++) {
       var sidebar_sublist = parent.getElementsByClassName("sidebar-sublist")[0];
 
       
+      var nested_arrow = this.getElementsByClassName("sidebar-nested-arrow")[0];
+
       var list_item = this.getElementsByClassName("sidebar-item");
 
-      //list_item.classList.toggle("active");
-      
       sidebar_sublist.classList.toggle("unfolded");
-      if (sidebar_sublist.style.maxHeight){
-        sidebar_sublist.style.maxHeight = null;
+      nested_arrow.classList.toggle("sidebar-nested-arrow-unfolded");
+      if (sidebar_sublist.style.display === "block") {
+        sidebar_sublist.style.display = "none";
       } else {
-        sidebar_sublist.style.maxHeight = sidebar_sublist.scrollHeight + "px";
-      } 
+        sidebar_sublist.style.display = "block";
+      }
+      
+      //if (sidebar_sublist.style.maxHeight){
+      //  sidebar_sublist.style.maxHeight = null;
+      //} else {
+      // sidebar_sublist.style.maxHeight = sidebar_sublist.scrollHeight + "px";
+      //} 
+
     });
 }
+
+
 
 ////////////////////
 // Add Active Link selection on all leave nodes
 var leafs = document.getElementsByClassName("sidebar-leaf");
+const list_items = Array.from(leafs);
 var i;
-console.log("LEAFS:", leafs);
 
+var selectedolditem = sessionStorage.getItem("selectedolditem");
+
+// Initialize leaf links
 for (i = 0; i < leafs.length; i++) {
-  console.log("parents:", leafs[i].parentElement.parentElement);
-  leafs[i].addEventListener("click", function() {
-      
-      this.classList.toggle("active");
-    
-      var parent = this.parentElement;
-      if ( parent.parentElement.classList.contains("sidebar-sublist") ) {
-        //parent.parentElement.add("unfolded");
-        //parent.parentElement.style.display = "block";
-        //parent.parentElement.style.maxHeight = sidebar_sublist.scrollHeight + "px";
-      } 
-       
-      
-    });
-}
 
+
+
+  // Attach active-leaf class from previous page
+  if (selectedolditem !== null) {
+      if (  leafs[i].id === selectedolditem ){
+        leafs[i].classList.add("active-leaf");
+
+        // Loop back to tier-1 to unfold all lists and intermediate lists
+        // Get parent and repeat until at navigation top
+        var reached_top = false;
+        var parent = leafs[i];
+
+        while ( !reached_top ){
+          console.log("current:", parent);
+          var parent = parent.parentElement;
+          if ( parent.classList.contains("tier-1")  ){
+            reached_top = true;
+            break;
+          }
+
+          if ( parent.classList.contains("sidebar-sublist") ) {
+            console.log("inside");
+            parent.classList.add("unfolded");
+            parent.style.display = "block";
+            
+            console.log("arrow:", parent.parentElement);//.getElementsByClassName("sidebar-nested-arrow"));
+
+            //parent.getElementsByClassName("sidebar-nested-arrow")[0].classList.add("sidebar-nested-arrow-unfolded");
+          } 
+
+          
+        } 
+      }
+  }
+
+
+  // Add event listener
+  leafs[i].addEventListener("click", function() {
+    // Removes all active links from other leafs
+    list_items.forEach(list_item => {
+      if ( list_item.classList.contains('active-leaf') ) {
+        // Remove active from all sidebar-leafs
+        list_item.classList.remove('active-leaf');
+      }
+    });
+
+    // Obtains anchor and id which is equal to the identifier defined in _data/side-nav.yml
+    var id = this.id;
+    // If the link is clicked and the page is switch, this tore helps to uniquely identify which link to highlight
+    sessionStorage.setItem("selectedolditem", id);
+    this.classList.add("active-leaf");
+  
+      
+  });
+}
