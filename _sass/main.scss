@@ -736,20 +736,19 @@ hr.sidebar-group-divider{
   border-width: 0 1px 1px 0;
   padding: 3px;
   display: inline-block;
-  transition: transform 0.2s ease-in-out;
+  //transition: transform 0.2s ease-in-out;
   transform: rotate(-45deg);
 }
 
+.sidebar-nested-arrow-unfolded{
+  transform: rotate(45deg);
+}
 
 .sidebar ul.sidebar-sublist {
   //max-height: 0;
   display: none;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
-}
-
-.sidebar-nested-arrow-unfolded{
-  transform: rotate(45deg);
 }
 
 .sidebar ul{
@@ -767,7 +766,7 @@ hr.sidebar-group-divider{
 .sidebar #sidebar-group{
   margin: 0;
   margin-bottom: 0.3em;
-  font-weight: 500;
+  font-weight: 525;
   font-size: 13px;
 }
 

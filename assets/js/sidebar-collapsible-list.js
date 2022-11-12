@@ -21,6 +21,7 @@ for (i = 0; i < coll.length; i++) {
         sidebar_sublist.style.display = "block";
       }
       
+      // Unfold effect instead of block
       //if (sidebar_sublist.style.maxHeight){
       //  sidebar_sublist.style.maxHeight = null;
       //} else {
@@ -42,8 +43,6 @@ var selectedolditem = sessionStorage.getItem("selectedolditem");
 
 // Initialize leaf links
 for (i = 0; i < leafs.length; i++) {
-
-
 
   // Attach active-leaf class from previous page
   if (selectedolditem !== null) {
@@ -68,8 +67,11 @@ for (i = 0; i < leafs.length; i++) {
             parent.classList.add("unfolded");
             parent.style.display = "block";
             
-            console.log("arrow:", parent.parentElement);//.getElementsByClassName("sidebar-nested-arrow"));
-
+            // Get Sibling that must be anchor and has class=dropdown
+            console.log("Sibling:", parent.previousElementSibling);//.getElementsByClassName("sidebar-nested-arrow"));
+            var anchor_sibling = parent.previousElementSibling;
+            console.log("Anchor:", anchor_sibling.getElementsByClassName("sidebar-nested-arrow")[0]);
+            anchor_sibling.getElementsByClassName("sidebar-nested-arrow")[0].classList.toggle("sidebar-nested-arrow-unfolded");
             //parent.getElementsByClassName("sidebar-nested-arrow")[0].classList.add("sidebar-nested-arrow-unfolded");
           } 
 
