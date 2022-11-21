@@ -10,4 +10,4 @@ title: "Imprint"
  
 * +41 12 346 78 90 
 * {{ site.contact_email |escape }}
-* 4051 Basel, CH
+* Dornacherstrasse 192, 4053 Basel CH
