@@ -10,9 +10,14 @@ Start developing your Jekyll website.
 
 ### Current Versions
 {% for version in site.data.versions %}
-    {{ version.name }}
+{{ version[0] }}
 {% endfor %}
 
+### Supported Languages
+{% for lang_hash in site.data.languages %}
+{% assign lang = lang_hash[1] %}
+{{ lang.short }}
+{% endfor %}
 ----
 
 Hi
