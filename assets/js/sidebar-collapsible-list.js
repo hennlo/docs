@@ -11,7 +11,7 @@ for (i = 0; i < coll.length; i++) {
       
       var nested_arrow = this.getElementsByClassName("sidebar-nested-arrow")[0];
 
-      var list_item = this.getElementsByClassName("sidebar-item");
+    
 
       sidebar_sublist.classList.toggle("unfolded");
       nested_arrow.classList.toggle("sidebar-nested-arrow-unfolded");

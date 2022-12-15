@@ -19,6 +19,7 @@ Start developing your Jekyll website.
 {{ lang.short }}
 {% endfor %}
 ----
+{{page.url}}
 
 Hi
 

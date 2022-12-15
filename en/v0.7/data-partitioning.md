@@ -1,10 +1,12 @@
 ---
 layout: default
-title: Data Partitioning v0.8
+title: Data Partitioning v0.7
 #toc: true
 docs_area: architecture
+lang: en
 ---
-Replication in Version 0.8
+Replication in Version 0.7
+
   
    
 Data partitioning is a common concept in Database Management Systems (DBMS) to split data in chunks or fragments. In general, it can be distinguished between *Replication*, *Vertical Partitioning* and *Horizontal Partitioning*. Polypheny also supports combining these techniques. This allows selectively replicating parts of the data and therefore efficiently optimize for multiple application requirements at the same time.
@@ -36,4 +38,3 @@ Polypheny supports the following partition functions:
 * **List** - the entity is partitioned by explicitly specifying values for each partition.
 * **Hash** - the entity is partitioned based on the hash of the values of the partition field. 
 * **Range** - the entity is partitioned into numerical "ranges". There needs to be no overlap between the ranges. 
-* **Temperature-aware Partitioning** - Serves as an extension to the classical partition functions. It places data based on their "temperature" in either a *HOT*- or *COLD* partition group. This classification depends on certain cost metrics like the access frequency. It internally uses the hash partitioning function.

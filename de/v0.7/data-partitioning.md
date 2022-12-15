@@ -3,6 +3,7 @@ layout: default
 title: Data Partitioning v0.7
 #toc: true
 docs_area: architecture
+lang: de
 ---
 Replication in Version 0.7
 

@@ -1,0 +1,28 @@
+<!-- https://stackoverflow.com/questions/6392677/include-different-file-in-jekyll-depending-on-the-locale -->
+
+<!-- Retrieve any two language identification characters from url to obtain current page language -->
+{% capture active_lang %}{{ page.url | truncate: 3, "" | remove: "/" }}{% endcapture %}
+
+
+<!-- Fallback to default Language if no correct language is selected.-->
+{% unless site.data.languages contains active_lang %}
+    {% assign active_lang = site.default_lang %}
+{% endunless %}
+"{{ active_lang }}"
+
+
+<!-- List all centrally defined languages -->
+{% for lang_hash in site.data.languages %}
+{% assign lang = lang_hash[1] %}
+
+
+<!-- Only display link of non active languages-->
+{% if lang.short == active_lang %}
+_{{ lang.short }}_
+    {% else %}
+<a class="nav-language-option" href="{{ page.url | replace_first: active_lang, lang.short }}">{{ lang.short }}-({{ page.lang }})</a>
+    {% endif %},
+{% endfor %}
+
+
+

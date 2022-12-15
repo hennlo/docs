@@ -1,8 +1,12 @@
 <head>
+
+    {% assign active_lang = {{ page.lang | default: site.default_lang }} %}
+    <html lang="{{ active_lang }}"></html>
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <meta name="description" content="{% if page.summary %}{{ page.summary | strip_html | strip_newlines | truncate: 160 }}{% endif %}">
-    <meta name="keywords" content="{% if page.tags %}{{ page.tags | join: ', ' | escape }}{% endif %}">
+    <meta name="keywords" content=" {{ active_lang }} {% if page.tags %}{{ page.tags | join: ', ' | escape }}{% endif %}">
 
 
     {%- if page.url contains '404' or page.sitemap == false or page.url contains site.versions["dev"] and stable_pages_names contains page.name %}

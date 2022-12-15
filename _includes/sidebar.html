@@ -16,7 +16,7 @@
                 </form>
             </div>       
             
-            <!-- Pick specified page version or teh stable the current stable version if nothing else is set -->
+            <!-- Pick specified page version or the stable the current stable version if nothing else is set -->
             {% assign current_version = {{ page.version  | default: site.versions["stable"] }} %}
             
             <div class="sidebar">
@@ -58,7 +58,7 @@
                                                                                         <div class="sidebar-nested-arrow"></div>
                                                                                     </a>
                                                                                 {% else %}
-                                                                                <a id="{{ tier-3[1].identifier }}" href="/{{ current_version }}/{{ tier-3[1].url }}" class="sidebar-item sidebar-leaf">{{ tier-3[1].name }}</a>
+                                                                                <a id="{{ tier-3[1].identifier }}" href="/{{ active_lang }}/{{ current_version }}/{{ tier-3[1].url }}" class="sidebar-item sidebar-leaf">{{ tier-3[1].name }}</a>
                                                                                 {%endif%}
                                                                         </li>
                                                                         
@@ -66,7 +66,7 @@
                                                                 </ul>
 
                                                             {% else %}
-                                                            <a id="{{ tier-2[1].identifier }}" href="/{{ current_version }}/{{ tier-2[1].url }}" class="sidebar-item sidebar-leaf">{{ tier-2[1].name }}</a>
+                                                            <a id="{{ tier-2[1].identifier }}" href="/{{ active_lang }}/{{ current_version }}/{{ tier-2[1].url }}" class="sidebar-item sidebar-leaf">{{ tier-2[1].name }}</a>
                                                             {%endif%}
                                                     </li>
                                                 {% endfor %}
