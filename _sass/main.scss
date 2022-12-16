@@ -240,10 +240,64 @@ a.navbar-item:hover::before {
   align-items: center;
 }
 
-#locality img{
+#locality img {
   width: 1.5em;
   margin-left: 0.5em;
   cursor: pointer;
+}
+
+#language_selection {
+  z-index: 900;
+  
+}
+
+.language-switcher {
+  z-index: 901;
+}
+
+.language-switcher ul#language-list{
+  display: flex;
+  flex-direction: column !important;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  
+
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  padding-bottom: 8px !important;
+
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+
+  line-height: 1.725;
+  color: #495057;
+  background-color: #fff;
+
+  box-shadow: 0 1px 5px rgba(34, 34, 34, 0.5); 
+}
+
+.language-switcher li{
+  opacity: 0.7;
+  font-weight: 550;
+  font-size: 0.8em;
+}
+
+.language-switcher li.active_language{
+  opacity: 1;
+}
+
+.language-switcher li a:hover{
+  text-decoration: underline;
+  font-weight: 650;
+}
+
+.language-switcher ul#language-list li.nav-language-option a:hover{
+  text-decoration: underline;
+}
+
+.language-hidden {
+  display: none;
 }
 /****/
 

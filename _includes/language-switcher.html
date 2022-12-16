@@ -6,23 +6,27 @@
 
 <!-- Fallback to default Language if no correct language is selected.-->
 {% unless site.data.languages contains active_lang %}
-    {% assign active_lang = site.default_lang %}
+<!--    {% assign active_lang = site.default_lang %} -->
 {% endunless %}
-"{{ active_lang }}"
+
 
 
 <!-- List all centrally defined languages -->
+<ul id="language-list">
 {% for lang_hash in site.data.languages %}
 {% assign lang = lang_hash[1] %}
 
-
 <!-- Only display link of non active languages-->
 {% if lang.short == active_lang %}
-_{{ lang.short }}_
+    <li class="active_language">{{ lang.label}}</li>
     {% else %}
-<a class="nav-language-option" href="{{ page.url | replace_first: active_lang, lang.short }}">{{ lang.short }}-({{ page.lang }})</a>
-    {% endif %},
+    <li>
+        <a class="nav-language-option" href="{{ page.url | replace_first: active_lang, lang.short }}">{{ lang.label }}</a>
+    </li>
+    {% endif %}
 {% endfor %}
 
+</ul>
 
+<script src="/assets/js/language-switcher.js"></script>
 
