@@ -246,6 +246,35 @@ a.navbar-item:hover::before {
   cursor: pointer;
 }
 
+.get-polpyheny-box{
+  display: block;
+  font-size: 1rem;
+  font-weight: 550;
+  color: #ffffff;
+  line-height: 1.725;
+  background-color: #246083;
+  //border: 1px solid #11577F;
+  border-radius: 4px;
+  
+  background-size: 17px 17px;
+  padding: 5px 10px;
+  margin-left: 20px;
+}
+
+.get-polpyheny-box a{
+  display: block;
+}
+
+.get-polpyheny-box:hover{
+  box-shadow: 0 1px 5px rgba(34, 34, 34, 0.5); 
+}
+
+
+.header-options{
+  display: flex;
+  align-items: center;
+}
+
 #language_selection {
   z-index: 900;
   
@@ -338,6 +367,7 @@ a.navbar-item:hover::before {
     position: absolute;
     right: 1.0em;
   }
+
 
     /***
     Content beneath Header
@@ -439,6 +469,13 @@ a.navbar-item:hover::before {
 
   #header {
     box-shadow: none;
+  }
+
+  .get-polpyheny-box{
+    padding: 3px 5px;
+    margin: 0 !important;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
   }
 
   #sidebar-checkbox {
@@ -611,6 +648,8 @@ a.navbar-item:hover::before {
     padding: 0;
     padding-top: 1.2em;
     border-top: 1px solid #D6DBE7;
+
+    flex-direction: column;  
   }
 
 
