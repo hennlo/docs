@@ -18,15 +18,18 @@
             </a> 
         </div>
 
-        <!-- Logo Seperator -->
-        <div class="logo-separator">|</div>
-
-        <!-- Page Title -->
-        <div id="page-title">
-            <a href="#">
-                <span>{{ site.short_title | upcase }} </span>
-            </a>
-        </div>
+        <!-- Hide Logo Seperator and Short Title if not set e.g. Website -->
+        {% unless site.short_title %}
+            <!-- Logo Seperator -->
+            <div class="logo-separator">|</div>
+    
+            <!-- Page Title -->
+            <div id="page-title">
+                <a href="#">
+                    <span>{{ site.short_title | upcase }} </span>
+                </a>
+            </div>
+        {% endunless %}
 
     </div>
     
