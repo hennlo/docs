@@ -3,7 +3,7 @@ $background: #242a35;
 .highlight {
   background-color: $background;    
   border-radius: 4px;
-  
+  max-width: 90vw;
 
   .hll {
     background-color: #49483e;
@@ -153,6 +153,7 @@ pre {
   padding: 1em 2em;
 
   overflow-x: auto;
+  //white-space: pre;
 
   code{
     color: whitesmoke;
@@ -160,6 +161,11 @@ pre {
   
     padding-right: 1em;
   }
+}
+
+// Common Code utilities
+.no-code-before .highlight code::before{
+  content: "" !important;
 }
 
 // Language specifics

@@ -1,5 +1,12 @@
 <footer class="site-footer">
     
+    {% capture button_company %}{{ site.data.translation.company[page.lang] }}{% endcapture %}
+    {% capture button_imprint %}{{ site.data.translation.imprint[page.lang] }}{% endcapture %}
+    {% capture button_contact %}{{ site.data.translation.contact[page.lang] }}{% endcapture %}
+    {% capture button_support %}{{ site.data.translation.support-channel[page.lang] }}{% endcapture %}
+    {% capture button_about %}{{ site.data.translation.about[page.lang] }}{% endcapture %}
+    {% capture button_dataprotection %}{{ site.data.translation.data-protection[page.lang] }}{% endcapture %}
+
     <div class="footer-heading flex-start">{{site.title | escape}}</div>
     
     <div class="flex-start">
@@ -8,40 +15,51 @@
 
     <div class="footer-col-wrapper footer-row">
         <div class="footer-col footer-col-1">
-            <div class="footer-col-heading"> Contact </div>
+            <div class="footer-col-heading"> {{ button_contact }} 
+                <hr>
+            </div>
+            
             <ul class="contact-list">
                 {% if site.contact_email %}
                     <li><a class="u-email" href="mailto:{{site.contact_email}}">{{ site.contact_email }}</a></li>
                 {% endif %}
-                <li><a class="" href="/imprint">Imprint</a></li>
+                <li><a class="" href="/{{ active_lang}}/imprint">{{ button_imprint }}</a></li>
+                <li><a class="" href="/{{ active_lang}}/dataprotection">{{ button_dataprotection }}</a></li>
             </ul>
         </div>
         
 
         <div class="footer-col footer-col-2">
-            <div class="footer-col-heading"> Company </div>
+            <div class="footer-col-heading">{{ button_company }}
+                <hr>
+            </div> 
             <ul >
-                <li><a class="" href="/about">About</a></li>
-                <li><a class="" href="/imprint">Imprint</a></li>
-                <li><a class="" href="/company">Company</a></li>
-                <li><a class="" href="https://blog.polypheny.com">Blog</a></li>
+                <li><a class="" href="/{{ active_lang}}/company">{{ button_about }}</a></li>
+                <li><a class="" href="/{{ active_lang}}/imprint">{{ button_imprint }}</a></li>
+                <li><a class="" href="/{{ active_lang}}/company">{{ button_company }}</a></li>
+                <!-- <li><a class="" href="https://blog.polypheny.com">Blog</a></li> -->
+                <li><a class="" href="https://github.com/polypheny/Polypheny-DB/discussions" target="_blank">Blog</a></li>
             </ul>
         </div>
 
         <div class="footer-col footer-col-3">
-            <div class="footer-col-heading"> Support Channels </div>
+            <div class="footer-col-heading">{{ button_support }}
+                <hr>
+            </div>
             <ul >
                 {% if site.support_email %}
                     <li><a class="u-email" href="mailto:{{site.support_email}}">{{ site.support_email }}</a></li>
                 {% endif %}
-                <li><a class="" href="https://github.com/polypheny/Polypheny-DB/issues">Issues</a></li>
-                <li><a class="" href="https://github.com/polypheny/Polypheny-DB/issues/new/choose">Community</a></li>
-                <li><a class="" href="https://discord.com/channels/819939709597122572/819948267739676702">Discord</a></li>
+                <li><a class="" href="https://github.com/polypheny/Polypheny-DB/issues" target="_blank">Issues</a></li>
+                <li><a class="" href="https://github.com/polypheny/Polypheny-DB/issues/new/choose" target="_blank">GitHub Community</a></li>
+                <li><a class="" href="https://chat.polypheny.org" target="_blank">Discord</a></li>
             </ul>
         </div>
 
         <div class="footer-col footer-col-4"> 
-            <div class="footer-col-heading"> Socials </div>
+            <div class="footer-col-heading"> Socials 
+                <hr>
+            </div>
             {% include social.html %}
         </div>
 

@@ -1,4 +1,4 @@
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://polypheny.com" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # the subpath of your site, e.g. /blog
 title: "Polypheny Documenation" # the name of your site, e.g. ACME Corp.
 short_title: "Documentation" # Will be capitilized
@@ -12,7 +12,14 @@ tagline:               >
 keywords:              [polystore, distribution, databases, multi-stores, data, polydbms, nosql, sql]
 
 
+homepage: "https://polypheny.com"
+
 default_lang: en
+
+
+# conifgs
+include:
+  - ".htaccess"
 
 # Custom Settings
 
@@ -33,7 +40,7 @@ contact_email: "info@polypheny.com"
 support_email: "support@polypheny.com"
 
 ### Legal
-copyright: "The Polypheny Project"
+copyright: "Polypheny"
 
 ### Social Media
 twitter_username: "polypheny"
@@ -41,15 +48,6 @@ youtube_channel: "UClwLro6vbAr0Ok0hjLvtovA"
 linkedin_page: "polypheny"
 github_repository: "polypheny/Polypheny-DB"
 
-
-
-
-
-# Jekyll Collections
-collections:
-  about:
-    output: true # Set to render files in _about folder
-    permalink: /:title/ # Set the format of the permalink by default 
 
 sass:
     sass_dir: _sass

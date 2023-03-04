@@ -1,0 +1,131 @@
+hero-text:
+  en: The first true PolyDBMS and the last database you'll need.
+  de: Das erste echte PolyDBMS und die letzte Datenbank die Sie je brauchen werden.
+
+get-polypheny:
+  en: Get Polypheny
+  de: Installieren
+
+learn-more:
+  en: Learn more
+  de: Mehr erfahren
+
+contact-us:
+  en: Contact Us
+  de: Kontaktieren Sie Uns
+
+get-started:
+  en: Get Started
+  de: Loslegen
+
+imprint:
+  en: Imprint
+  de: Impressum
+
+contact:
+  en: Contact
+  de: Kontakt
+
+support-channel:
+  en: Support Channels
+  de: Support Kanäle
+
+about:
+  en: About
+  de: Über Uns
+
+data-protection:
+  en: Data Protection
+  de: Datenschutz
+
+view-project:
+  en: View Project
+  de: Projekt Ansehen
+
+code-of-conduct:
+  en: Code of Conduct
+  de: Verhaltenskodex
+
+getting-involved:
+  en: Getting Involved
+  de: Mitwirken
+
+scientific-research:
+  en: Scientific Research
+  de: Wissenschaftliche Forschung
+
+scientific-research-projects:
+  en: Scientific Research Projects
+  de: Wissenschaftliche Forschungsprojekte
+
+publications:
+  en: Publications
+  de: Publikationen
+
+contributing:
+  en: Contributing
+  de: Beitragen
+
+touchpoint:
+  en: Get in Touch With Us
+  de: Nehmen Sie Kontakt mit Uns auf
+
+starting:
+  en: How to Start
+  de: Wie man beginnt
+
+projects:
+  en: Projects
+  de: Projekte
+
+open_positions:
+  en: Open Positions
+  de: Offene Stellen
+
+dbis:
+  en: Database and Information Systems Group
+  de: Forschungsgruppe Datenbanken und Informationssysteme
+
+unibas:
+  en: University of Basel
+  de: Universität Basel
+
+interested:
+  en: Interested
+  de: Interessiert
+
+work-with-us:
+  en: Work with Us
+  de: Arbeiten Sie mit Uns
+
+ongoing:
+  en: Ongoing
+  de: Laufende
+
+####
+# Nav Translation based on identifier
+####
+
+product:
+  en: Product
+  de: Produkt
+
+solutions:
+  en: Solutions
+  de: Lösungen
+
+pricing:
+  en: Pricing
+  de: Preise
+
+company:
+  en: Company
+  de: Unternehmen
+
+docs:
+  en: Docs
+  de: Doku
+
+community:
+  en: Community
+  de: Community

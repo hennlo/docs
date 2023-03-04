@@ -1,0 +1,9 @@
+<div class="btn-wrapper">
+<div class="btn text-centered {{ include.css-classes }}">
+{% if include.external %}
+<a href="{{ include.url }}" target="_blank">{{ include.display-text }}</a>
+{% else %}
+<a href="{{ include.url }}">{{ include.display-text }}</a>
+{% endif %}
+</div>
+</div>

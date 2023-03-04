@@ -1,8 +1,33 @@
+@import "style-guide";
+@import "syntax_highlight/monokai"; // 'monokai' as example
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("/assets/fonts/OpenSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/assets/fonts/Roboto-Regular.ttf");
+}
+
+@font-face {
+  font-family: "SourceSansPro";
+  src: url("/assets/fonts/SourceSansPro-Regular.ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/assets/fonts/Poppins-Regular.ttf");
+  font-display: swap;
+}
+
+
 $backgroundColor: #ffffff;
 $bodyColor: #000000;
-$bodyFont: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-$header_height: 5em;
 
+$header_height: 5em;
 $sidebar-width: 20em;
 
 /***
@@ -15,14 +40,11 @@ $sidebar-width: 20em;
 
 html {
   height: 100%;
-  
+  color: $standard-black;
 }
 
 
 body {
-  background: $backgroundColor;
-  color: $bodyColor;
-  font-family: $bodyFont;
 
   margin: 0;
   height: 100%;
@@ -44,15 +66,24 @@ ul {
   list-style: none;
 }
 
+// Is used to ovverride display of element
+.override_display{
+  display: block !important;
+}
+
 main {
   flex-grow: 1;  /* ensures that the container will take up the full height of the parent container */
-  background-color: orange;
+  background-color: $light-backgroundcolor;
   z-index: 0;
   padding: 2em 1.5em;
   width: 100%; // Content Page is always filled
   position: relative;
   flex-wrap: wrap;
   
+}
+
+main ul {
+  list-style: disc !important;
 }
 /***/
 
@@ -66,7 +97,7 @@ main {
   //flex-direction: column;
   //overflow: hidden;  // Make parent container non-scrolable
   //margin: 0px;  /* removes default style */
-  background-color: pink;
+  background-color: $light-backgroundcolor;
   width:100%;
   padding-right: 0.7em; // TO BE DELETED?!
   padding-left: 0.7em;
@@ -104,19 +135,19 @@ main {
     height: $header_height;
     width: 100%;
     
-    background-color: aqua;
+  background-color: $light-header-backgroundcolor;
 
     display: flex;
     flex-direction: row;
   
     flex-shrink: 0;
     
-    justify-content: space-between;
+  //justify-content: space-between;
     align-items: center;
     z-index: 9999; // Always show on front
     
     box-sizing: border-box;
-    box-shadow: 0 -6px 10px 5px rgba(34, 34, 34, 0.5); 
+  box-shadow: $heavy-box-shadow
 }
   
 #polypheny-left-header {
@@ -152,7 +183,7 @@ main {
   margin-top: 0.3em; // Small Spacing from top to align more central
   font-size: 1.2rem;
   font-family: "Texta-Bold", sans-serif;
-  color: #11577F;
+  color: $light-primarycolor;
   font-weight: 500;
 }
 
@@ -189,6 +220,11 @@ main {
   align-items: center;
   justify-content: space-between;
   padding: .5rem 1rem;
+
+  .active{
+    color: $light-primarycolor;
+  }
+
 }
 
 
@@ -201,18 +237,16 @@ main {
 
 /* Navvbar animation*/
 a.navbar-item{
-  color: #000;
-
-  font-weight: bold;
+  //font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
-  color: #031D44;
+  color: $light-font-color;
   padding: 0.75em 0em;
   display: inline-block;
   position: relative;
   opacity: 0.75;
-  margin-left: 0.25em;
-  margin-right: 0.25em;
+  margin-left: 0.75em;
+  margin-right: 0.75em;
 }
 
 a.navbar-item:hover{
@@ -224,7 +258,7 @@ a.navbar-item::before {
 
   content: "";
   position: absolute;
-  background-color: #031D44;
+  background-color: $light-text-underline;
 
   height: 0%;
   width: 100%;
@@ -241,38 +275,30 @@ a.navbar-item:hover::before {
 }
 
 #locality img {
-  width: 1.5em;
+  width: 1.3em;
   margin-left: 0.5em;
   cursor: pointer;
 }
 
-.get-polpyheny-box{
-  display: block;
-  font-size: 1rem;
-  font-weight: 550;
-  color: #ffffff;
-  line-height: 1.725;
-  background-color: #246083;
-  //border: 1px solid #11577F;
-  border-radius: 4px;
-  
-  background-size: 17px 17px;
-  padding: 5px 10px;
-  margin-left: 20px;
+#locality img.world-img {
+  width: 1.3em;
 }
 
-.get-polpyheny-box a{
-  display: block;
+#locality img.theme-img {
+  width: 1.8em;
+  display: none !important;
 }
 
-.get-polpyheny-box:hover{
-  box-shadow: 0 1px 5px rgba(34, 34, 34, 0.5); 
+#header{
+  .get-polpyheny-box{
+    margin-left: 20px;
 }
-
+}
 
 .header-options{
   display: flex;
   align-items: center;
+  margin-top: 0.5em;
 }
 
 #language_selection {
@@ -314,6 +340,7 @@ a.navbar-item:hover::before {
 
 .language-switcher li.active_language{
   opacity: 1;
+  font-weight: 600;
 }
 
 .language-switcher li a:hover{
@@ -332,6 +359,15 @@ a.navbar-item:hover::before {
 
 
 
+#toc-wrapper {
+  ul li {
+    list-style: none;
+
+    &:hover {
+      color: $light-primarycolor;
+    }
+  }
+}
 
 /*
 **
@@ -358,9 +394,13 @@ a.navbar-item:hover::before {
 
 
   #polypheny-right-header{
-    flex: 0 0 60%;
-    max-width: 60%;
+    //flex: 0 0 90%;
+    //max-width: 60%;
     align-items: center;
+    flex-grow: 0;
+    flex-shrink: 0;
+    justify-content: flex-start;
+    padding-left: 1em;
   }
 
   #locality{
@@ -468,11 +508,10 @@ a.navbar-item:hover::before {
   $mobile_header_height: 5em;
 
   #header {
-    box-shadow: none;
+    box-shadow: 0 -6px 10px 5px rgba(34, 34, 34, 0.5);
   }
 
   .get-polpyheny-box{
-    padding: 3px 5px;
     margin: 0 !important;
     margin-top: 10px !important;
     margin-bottom: 10px !important;
@@ -552,7 +591,7 @@ a.navbar-item:hover::before {
   #polypheny-right-header{
     flex-direction: column;
     width: 100%;
-    background: rgba(0, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.9);
     align-items: center;
 
     opacity: 0;
@@ -635,7 +674,7 @@ a.navbar-item:hover::before {
     display: block;
     width: 100%;
     padding: 0;
-    padding-top: 1em;
+    padding-top: 0.6em;
     margin: 0;
   }
 
@@ -657,7 +696,7 @@ a.navbar-item:hover::before {
     Content beneath Header
   ***/
   #maincontent {
-    padding-top: $mobile_header_height/2 + 2em;
+    padding-top: calc(calc(#{$mobile_header_height} / 2) + 2em);
   }
 
   
@@ -668,8 +707,6 @@ a.navbar-item:hover::before {
 
     // Footer
     .site-footer{
-      background-color:gray;
-    
       padding-left: 1em;
       padding-right: 1em;
     }
@@ -737,7 +774,7 @@ a.navbar-item:hover::before {
   padding-left: 0.8em;
 
   
-  background-color: yellow;
+  background-color: $standard-white;
   z-index: 999;
 }
 
@@ -859,8 +896,10 @@ hr.sidebar-group-divider{
 .sidebar #sidebar-group{
   margin: 0;
   margin-bottom: 0.3em;
-  font-weight: 525;
+  font-weight: 550;
   font-size: 13px;
+
+  color: $light-primarycolor;
 }
 
 
@@ -896,14 +935,14 @@ hr.sidebar-group-divider{
 **
 **/
 .site-footer{
-  background-color:gray;
-
+  background-color: $dark-backgroundcolor;
+  color: $standard-white;
+  font-size: 0.9em;
 
   
   display: flex;
   flex-direction: column;
   //justify-content: space-around;
-  align-items:left;
   z-index: 0; // Always show on front
   
 
@@ -948,7 +987,10 @@ hr.sidebar-group-divider{
 
 .footer-col > ul {
   padding-left: 0;
+  display: flex;
   flex-direction: column;
+
+  list-style: none;
 
   li a:hover{
     text-decoration: underline;
@@ -973,7 +1015,8 @@ ul.social-media-list > li{
 }
 
 #copyright{
-  font-size: 0.9em;
+  font-size: 0.8em;
+  padding-bottom: 0.5em;
 }
 /****/
 
@@ -1001,7 +1044,7 @@ ul.social-media-list > li{
 
 a.anchor{
   opacity: 0.3;
-  content: url('../images/utils/link.png');
+  content: url("../images/utils/link.png");
   width: 1em;
   height: 1em;
   display: inline-block;

@@ -13,12 +13,25 @@ pricing:
   name: Pricing
   url: /pricing
 
-resources:
-  identifier: resources
-  name: Resources
-  url: /resources
-
 company:
   identifier: company
   name: Company
   url: /company
+
+community:
+  identifier: community
+  name: Community
+  url: /community
+
+
+docs:
+  identifier: docs
+  name: Documentation
+  url: https://community.polypheny.org/documentation/
+  external: true
+
+#resources:
+#  identifier: resources
+#  name: Resources
+#  url: /resources
+

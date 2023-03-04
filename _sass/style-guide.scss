@@ -1,0 +1,923 @@
+$header_height: 5em;
+
+// Font
+$font-body: "SourceSansPro","OpenSans", "Roboto", Helvetica,Arial,sans-serif;
+$font-display: "Poppins";
+
+
+// Color Variables
+$standard-black: #000;
+$standard-white: #fff;
+
+// Dark mode
+$dark-mode-black: #0d1117;
+$dark-mode-black-utilities: #161b22;
+
+// Light Variables
+$light-backgroundcolor: $standard-white;
+$light-header-backgroundcolor: $standard-white;
+
+//
+$light-font-color: $standard-black;
+$light-text-underline: #031D44;
+
+$light-primarycolor: #216876;
+$light-secondarycolor: #31AEC4;
+
+// Dark Variables
+$dark-backgroundcolor: #242a35;
+$dark-header-backgroundcolor: #242a35;
+$dark-font-color: $standard-white;
+$dark-text-underline: $standard-white;
+
+
+//Deafult Color
+$text-color: $standard-black;
+$bkg-color: $standard-white;
+
+/**
+black backpane
+#216876
+#48b2ac
+#4fa480
+#52a362
+#397356
+#447934
+
+-- primary options
+#216876
+#48B2AC
+
+black
+#070707
+#FFFFF2
+
+white backpane
+#93d8e4
+#61cbc4
+#a8e4e0
+#86d694
+#a9e1c1
+#b4e79f
+**/
+
+
+// Utils
+$border-radius: 4px;
+$light-border: 1px solid rgba($standard-black, 0.2);
+$mid-border: 3px solid rgba($standard-black, 0.2);
+$thick-border: 5px solid rgba($standard-black, 0.2);
+
+
+$bold-font-weight: 550;
+
+
+$light-box-shadow: 0 0.5px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+$heavy-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
+$internal-content-padding: 1em 2em 2em 2em;
+
+// PADDING Variable
+$section-y-padding: 3em;
+$section-x-padding: 10em;
+
+// Button Padding
+$btn-x-padding: 12px 24px;
+$btn-y-padding: 12px 24px;
+$btn-padding: $btn-y-padding $btn-x-padding;
+
+hr {
+    width: 100%;
+    display: block;
+    unicode-bidi: isolate;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    overflow: hidden;
+    border-style: inset;
+    border-width: 1px;
+}
+
+
+/**
+THEMES
+**/
+
+/* body {
+    $text-color: $standard-black;
+    $bkg-color: $standard-white;
+}
+
+body.dark-theme {
+    $text-color: $standard-white;
+    $bkg-color: $dark-backgroundcolor;
+}
+
+
+@media (prefers-color-scheme: dark) {
+    
+    body {
+        $text-color: $standard-white;
+        $bkg-color: $dark-backgroundcolor;
+    }
+    body.light-theme {
+        $text-color: $standard-black;
+        $bkg-color: $standard-white;
+    }
+}
+
+
+body {
+    background-color: $bkg-color;
+}
+
+h1, p {
+    color: $text-color;
+} */
+
+
+html {
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+/**
+FONTS
+**/
+
+body {
+    font-family: $font-body;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: $font-display;
+    color: $light-primarycolor;
+}
+
+
+/**
+BUTTONS
+**/
+
+
+.btn {
+    display: block;
+    font-size: 1rem;
+    font-weight: $bold-font-weight;
+    color: $dark-font-color;
+    line-height: 16px;
+    background-color: $light-secondarycolor;
+    border-radius: $border-radius;
+    padding: $btn-padding;
+    white-space: nowrap;
+
+    box-shadow: $light-box-shadow;
+    
+    // Necessary for BUTTON utils such as simple-btn.html
+    p {
+        padding: 0 !important;
+        margin: 0 !important;
+    } 
+
+    a {
+        display: block;
+    }  
+
+    &:hover {
+        background-color: darken($light-secondarycolor, 10%); 
+    }
+}
+
+.btn-inverted {
+    
+    color: $light-font-color;
+    background-color: $light-backgroundcolor;
+
+    &:hover {
+        background-color: darken($light-backgroundcolor, 20%); 
+    }
+}
+
+
+.info-btn-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    .btn-wrapper {
+        margin: 0 1em;
+    }
+}
+
+
+/**
+Fonts
+**/
+
+.text-inverted {
+    color: $dark-font-color;
+}
+
+.text-centered {
+    text-align: center;
+}
+
+.content-centered {
+    align-content: center !important;
+}
+
+/**
+SECTION
+ */
+
+@mixin font-props {
+    h2 {
+        margin-top: 0;
+        margin-bottom: 12px;
+        font-weight: 550;
+    }
+
+    p {
+        margin: 0.5em 0;
+    }
+}
+
+.mobile-grid-order-1{
+    @media screen and (max-width: 1080px)  {
+        order: 1;
+    }
+}
+
+.mobile-grid-order-2{
+    @media screen and (max-width: 1080px)  {
+        order: 2;
+    }
+}
+
+.mobile-grid-order-3{
+    @media screen and (max-width: 1080px)  {
+        order: 3;
+    }
+}
+
+.mobile-grid-order-4{
+    @media screen and (max-width: 1080px)  {
+        order: 4;
+    }
+}
+
+.mobile-grid-order-5{
+    @media screen and (max-width: 1080px)  {
+        order: 5;
+    }
+}
+
+.mobile-grid-order-6{
+    @media screen and (max-width: 1080px)  {
+        order: 6;
+    }
+}
+
+.mobile-grid-order-7{
+    @media screen and (max-width: 1080px)  {
+        order: 7;
+    }
+}
+
+.mobile-grid-order-8{
+    @media screen and (max-width: 1080px)  {
+        order: 8;
+    }
+}
+
+.mobile-grid-order-9{
+    @media screen and (max-width: 1080px)  {
+        order: 9;
+    }
+}
+
+.mobile-grid-order-10{
+    @media screen and (max-width: 1080px)  {
+        order: 10;
+    }
+}
+
+.section {
+    
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-items: center;
+    gap: 5em;
+    @include font-props;
+
+    padding: $section-y-padding $section-x-padding $section-y-padding $section-x-padding;
+
+    .card {
+        max-width: 1400px;
+    }
+    
+    .block {
+        max-width: 1400px;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 5em;
+        display: grid;
+        width: 100%;
+
+        & > * {
+            grid-column: span 6;
+        }
+
+        @media screen and (max-width: 720px) {
+            row-gap: 2em;
+            column-gap: 0;
+        }
+
+        @media screen and (max-width: 1080px)  {
+            gap: 2em !important;
+        }
+    }
+
+  & > * {
+        grid-column: span 6;
+        
+    }
+
+    @media screen and (max-width: 720px) {
+        gap: 2em;
+    }
+
+    @media screen and (max-width: 1080px) {
+        padding: $section-y-padding 2em $section-y-padding 2em;
+    }
+
+}
+
+.no-gap {
+    gap: 0 !important;
+}
+
+.no-v-gap {
+    row-gap: 0 !important;
+}
+
+
+.section-primary {
+    background-color: $standard-white;
+}
+
+.section-secondary {
+    background-color: lighten($light-secondarycolor, 48%);
+    padding-bottom: $section-y-padding;
+    padding-top: $section-y-padding;
+}
+
+
+ul li::marker {
+    color: $light-secondarycolor;
+    font-size: 1.2rem;
+}
+
+
+.content-wrapper {
+    padding-top: 4em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media screen and (max-width: 1080px)  {
+        padding-top: 1em !important;
+    }
+}
+
+/**
+Cards
+**/
+
+@mixin card {
+    display: grid;
+    grid-auto-flow: row;
+    align-content: start;
+    width: 100%;
+}
+
+
+.card-parent {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.card {
+    box-shadow: $light-box-shadow;
+    border-radius: $border-radius;
+
+    padding: $internal-content-padding;
+
+    background-color: $light-backgroundcolor;
+
+    
+
+    @include font-props;
+
+    hr {
+        width: 90%;
+    }
+
+    ul.feature-list {
+        
+        text-align: left;
+
+        &.small {
+            font-size: 0.9em;
+        }
+
+        &.large {
+            font-size: 1.1em;
+        }   
+
+    }
+
+    .btn-wrapper {
+        grid-column: span 1;
+
+    .btn {
+            margin-top: 0.5em;
+            padding: 0 8px;
+        }
+    }
+
+    .disclaimer-wrapper {
+        padding: 0;
+        font-size: 0.8em;
+        line-height: 16px;
+        display: flex;
+        justify-content: center;
+        white-space: nowrap;
+        margin-top: 10px;
+
+        p {
+            text-align: center;
+            margin: 0;
+            padding: 6px 12px;
+        }
+
+        .disclaimer-warn {
+            border: $light-border;
+            border-radius: 16px;
+            border-color: $light-secondarycolor;
+            color: $light-font-color;
+        }
+
+        .disclaimer-check {
+            border-radius: 16px;
+            background-color: $light-secondarycolor;
+            color: $dark-font-color;
+        }
+
+    }
+}
+
+.card-secondary {
+    background-color: lighten($light-secondarycolor, 45%);
+}
+
+.clickable-card {
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: $heavy-box-shadow;
+    }
+}
+
+.info-text-card{
+    row-gap: 0 !important; 
+
+    ul {
+        margin-top: 0;
+    }
+}
+
+// To centralize content items to appear more central
+.grid-item {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+// current duplicate of cards
+.block {
+    @include font-props;
+
+    hr {
+        width: 90%;
+    }
+
+    ul.feature-list {
+        
+        text-align: left;
+        margin-top: 0;
+        //list-style: circle !important;
+
+        li::marker {
+                color: $light-secondarycolor;
+        }
+
+        &.small {
+            font-size: 0.9em;
+        }
+
+        &.large {
+            font-size: 1.1em;
+        }   
+
+    }
+
+    .btn-wrapper {
+        grid-column: span 1;
+
+        .btn {
+            margin-top: 0.5em;
+            padding: $btn-padding;
+        }
+    }
+
+    .disclaimer-wrapper {
+        font-size: 0.8em;
+    }
+}
+
+.block-33 {
+    grid-column: span 2 !important;
+    @include card;
+
+    @media screen and (max-width: 1080px) {
+        grid-column: span 6 !important;
+    }
+}
+
+.block-50 {
+    grid-column: span 3 !important;
+    @include card;
+
+    @media screen and (max-width: 1080px) {
+        grid-column: span 6 !important;
+    }
+}
+
+
+/**
+IMG
+**/
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+
+/**
+Display Text
+**/
+
+.display-text {
+    font-size: 1.1em;
+}
+
+
+/**
+ICONs
+**/
+
+.icon-list {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+
+    padding-top: 1em;
+    margin: 0.2em 1em;
+
+    &.vertical {
+        flex-direction: column;
+        
+        img {
+            margin-top: 2em;
+        }
+    }
+
+    img {
+        margin: 0 1em;
+
+        width: auto;
+        max-width: 100%;
+        display: inline-block;
+        object-fit: contain;
+
+
+        &.small-scaling {
+            max-height: 50px;
+        }
+
+        &.medium-scaling {
+            max-height: 75px;
+        }
+
+        &.large-scaling {
+            max-height: 100px;
+        }
+
+    }
+}
+
+.icon-wrapper {
+    display: flex;
+
+    &.vertical {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &.horizontal {
+        flex-direction: row;
+    }
+}
+
+/**
+PADDING
+**/
+
+.pb-2 {
+    padding-bottom: 1em !important;
+}
+
+.pt-2 {
+    padding-top: 1em !important;
+}
+
+.pt-3 {
+    padding-top: 1.5em;
+}
+
+.p-0 {
+    padding: 0;
+}
+
+.p-1 {
+    padding: 0.5em;
+}
+
+.p-2 {
+    padding: 1em;
+}
+
+.p-3 {
+    padding: 1.5em;
+}
+
+.p-4 {
+    padding: 2em;
+}
+
+.p-5 {
+    padding: 2.5em;
+}
+
+.p-10 {
+    padding: 5em;
+}
+
+// mobile ps
+
+@media screen and (max-width: 720px) {
+
+    .m-p-0 {
+    padding: 0 !important;
+    }
+
+    .m-p-1 {
+    padding: 0.5em !important;
+    }
+
+    .m-p-2 {
+    padding: 1em !important;
+    }
+
+    .m-p-3 {
+    padding: 1.5em !important;
+    }
+
+    .m-p-4 {
+    padding: 2em !important;
+    }
+
+    .m-p-5 {
+    padding: 2.5em !important;
+    }
+}
+
+/**
+MARGIN
+**/
+
+.m-1 {
+    margin: 0.5em;
+}
+
+.mx-1 {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+
+.my-1 {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.m-2 {
+    margin: 1em;
+}
+
+.mx-2 {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.my-2 {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.m-3 {
+    margin: 1.5em;
+}
+
+.mx-3 {
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+}
+
+.my-3 {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.m-4 {
+    margin: 2em;
+}
+
+.mx-4 {
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+.my-4 {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.m-5 {
+    margin: 2.5em;
+}
+
+.mx-5 {
+    margin-left: 2.5em;
+    margin-right: 2.5em;
+}
+
+.my-5 {
+    margin-top: 2.5em;
+    margin-bottom: 2.5em;
+}
+
+
+ul.no-list-style {
+    list-style: none !important;
+}
+
+.section-heading {
+    margin-bottom: 0;
+}
+
+.section-intro-text {
+    padding: 0 15em;
+
+    p {
+        margin-top: 0;
+    }
+
+    @media screen and (min-width: 720px) and (max-width: 1080px) {
+        padding: 0 3.5em;
+    }
+
+    @media screen and (max-width: 720px) {
+        padding: 0 1.5em;
+    }
+}
+
+/**
+Text
+ **/
+
+.block .text-content {
+
+    h2,h3,h4 {
+        margin-top: 36px;
+    }
+    
+} 
+
+ // Only for links in MD texts not for Texts/Links within Buttons
+:is(p > a, .callout > a):not(.btn p > a){
+        color: $light-secondarycolor;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+
+blockquote {
+    padding: .5rem 1rem;
+    margin: .8rem 1rem;
+    border-left: 3px solid rgba($light-secondarycolor, 0.4);
+}
+
+.callout {
+
+    font-size: 1em;
+
+    border-radius: $border-radius;
+    border-left: $thick-border;
+    border-left-color: $light-secondarycolor;
+
+    padding: 30px 40px 30px 25px;
+    margin: 12px 0;
+    font-weight: normal;
+    line-height: 22.6px;
+    background-color: rgba($light-secondarycolor, 0.2);
+}
+
+
+/**
+Tables
+ **/
+
+table {
+    
+    border-style: solid;
+    border-width: 1px;
+    width: 100%;
+    border-color: lighten($light-primarycolor, 35%);
+
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    max-width: 100%;
+    background-color: transparent;
+    overflow: auto;
+    
+    & > * {
+        border-width: 1px 0;
+    }
+    
+    & > * > * {
+        border-width: 0 1px;
+    }
+
+    & > thead {
+        vertical-align: bottom;
+    }
+
+    thead:first-child {
+        background-color: lighten($light-primarycolor, 35%);
+    }
+
+    thead th {
+        font-weight: bold;
+    }
+
+    th, td {
+        padding: .25rem .5rem;
+    }
+
+    thead, tbody, tfoot, tr, td, th {
+        
+        font-weight: normal;
+        border-color: lighten($light-primarycolor, 35%);
+        border-style: solid;
+        
+    }
+}
+
+/**
+ SHADOWS
+ **/
+
+.shadow-s {
+    box-shadow: $light-box-shadow;
+}
+
+.shadow-l {
+    box-shadow: $heavy-box-shadow;
+}

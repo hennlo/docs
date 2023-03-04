@@ -1,6 +1,19 @@
-<!-- Main Menu navigation -->
+<!-- Main Menu navigation nav-item[1].identifier[active_lang] -->
 <div class="navbar-list">
     {% for nav-item in site.data.top-nav %}
-        <a class="navbar-item" href="{{ nav-item[1].url }}">{{ nav-item[1].identifier }}</a>
+
+        {% if page.url contains nav-item[1].url %}
+            {% assign temp_classes = "active" %}
+        {% else %}
+            {% assign temp_classes = "" %}
+        {% endif %}
+        
+        {% capture nav_identifier %}{{ nav-item[1].identifier }}{% endcapture %}
+        {% capture nav_display_text %}{{ site.data.translation.[nav_identifier][active_lang] }}{% endcapture %}
+        {% if nav-item[1].external %}
+            <a class="navbar-item" href="{{ nav-item[1].url }}" target="_blank">{{ nav_display_text }}</a>
+        {% else %}
+            <a class="navbar-item {{ temp_classes }}" href="/{{ active_lang}}{{ nav-item[1].url }}">{{ nav_display_text }}</a>
+        {% endif %}
     {% endfor %}
 </div>
