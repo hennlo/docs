@@ -14,8 +14,8 @@ start:
       name: Overview
       url: overview
 
-    getting_started:
-      identifier: getting_started
+    getting-started:
+      identifier: getting-started
       name: Getting Started
 
       subfolderitems:
@@ -24,8 +24,8 @@ start:
           name: Setup
           url: 
 
-        data_types:
-          identifier: data_types
+        data-types:
+          identifier: datatypes
           name: Data Types
           url: 
 
@@ -37,8 +37,8 @@ architecture:
   topics:
 
   # Topic
-    schema_model:
-      identifier: schema_model
+    schema-model:
+      identifier: schema-model
       name: Schema Model
 
       subfolderitems:
@@ -47,8 +47,8 @@ architecture:
           name: Basics
           url: 
 
-        data_partitioning:
-          identifier: data_partitioning
+        data-partitioning:
+          identifier: data-partitioning
           name: Data Partitioning
           url: data-partitioning
 
@@ -58,15 +58,15 @@ architecture:
           url:
 
   # Topic
-    data_storage:
-      identifier: data_storage
+    data-storage:
+      identifier: data-storage
       name: Data Storage
 
 
 
 #######
 # Group
-query_languages:
+query-languages:
   name: Query Languages
   topics:
       
