@@ -1,7 +1,6 @@
 ---
-layout: default
-title: "Release Notes v0.7"
+layout: homepage
+title: "Home"
 lang: en
+homepage: true
 ---
-
-Test v0.7

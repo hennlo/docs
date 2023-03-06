@@ -375,6 +375,16 @@ a.navbar-item:hover::before {
   }
 }
 
+
+#main-doc-intro-heading {
+  font-size: 32px;
+
+  h1,h2 {
+    font-weight: 500;
+  }
+
+}
+
 .doc-post-heading {
   font-family: $font-doc-display;
 }
@@ -1105,9 +1115,210 @@ a.anchor:hover{
   opacity: 1;
 }
 
-
-
 /****/
 
 
 
+.page-content-wrapper{
+  position: relative;
+  min-height: calc(100vh - #{$header_height} + 1em);
+
+  .background-wrapper{
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-top: -50px;
+    width: 100%;
+    height: calc(100% + 50px);
+    z-index: -1;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+
+  svg .page-background{
+    //fill: $light-primarycolor;
+    //fill: lighten($light-primarycolor, 65%);
+    fill: lighten($light-secondarycolor, 48%);
+  }
+}
+
+
+
+
+.btn-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-column: span 6;
+}
+
+
+
+.community-wrapper{
+
+  display: flex;
+  flex-direction: column;
+
+  justify-items: center;
+  justify-content: space-evenly;
+
+  padding: 1.5em;
+
+  .heading-wrapper{
+    align-self: center;
+
+  }
+
+  .icon-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    justify-content: space-evenly;
+
+    width: 100%;
+    div{
+      width: 50px;
+    }
+
+    img {
+      transition: transform .2s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+    }
+
+  }
+
+
+}
+
+
+// landing architectures
+.architecture-wrapper{
+  align-items: center;
+  width: 80%;
+
+  display: flex;
+  justify-self: center
+}
+
+// landing advantages
+.advantages-wrapper.grid-item{
+  align-items: start;
+  flex-direction: column;
+
+  display: flex;
+  justify-self: center
+}
+
+.advantages-logo{
+  align-items: center;
+  width: 80%;
+
+
+}
+
+// landing cases
+
+.mini-logo {
+  height: 5rem;
+  object-fit: contain;
+  width: 5rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+
+.small-image-scale {
+  object-fit: contain;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+
+  max-width: 200px;
+}
+
+.mid-image-scale {
+  object-fit: contain;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+
+  max-width: 325px;
+}
+
+.large-image-scale {
+  object-fit: contain;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+
+  max-width: 450px;
+}
+
+
+.use-cases-wrapper{
+  display: grid;
+  grid-template-rows: min-content min-content 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 8em;
+
+  &.mobile {
+    display: none;
+  }
+
+  @media screen and (max-width: 1080px)  {
+    gap: 2em;
+    padding: 3em;
+    grid-template-rows: min-content min-content 1fr;
+    grid-template-columns: 1fr;
+
+    &.mobile {
+      display: inherit;
+    }
+
+    &.default {
+      display: none;
+    }
+  }
+}
+
+
+
+// Pricing
+.offer-at-end{
+  grid-template-rows: min-content min-content min-content min-content 1fr;
+
+  .btn-wrapper {
+    align-items: end;
+  }
+
+}
+
+
+
+// company
+
+.team-portraits{
+  img {
+    height: 100%;
+  }
+}
+
+.portrait-wrapper {
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr min-content;
+}
+
+p {
+  text-align: left;
+}
+
+
+.highlighter-rouge {
+  width: 100%;
+  overflow-x: auto;
+}

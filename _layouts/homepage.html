@@ -1,0 +1,44 @@
+---
+layout: default
+title: Homepage
+---
+
+<div class="page-content-wrapper">
+    {% include background.html %}
+
+    <div class="content-wrapper">
+        <div class ="section block">
+
+        <div id="main-doc-intro-heading" class="text-centered">
+            <h1 class="doc-post-heading">Polypheny Documentation</h1>
+        </div>
+
+        {{ content }}
+
+        <div class ="card clickable-card block-33">
+            <a href=/{{ page.lang }}/{{ current_version | default: site.versions.stable }}/index>
+                <h3>Getting Started</h3>
+                Learn Polypheny basics and get up to speed quickly.
+            </a>
+            
+        </div>
+
+    
+        <div class ="card clickable-card block-33">
+            <h3>Working with Polypheny</h3>
+            Use Polyphenys rich interface & language toolset to start retrieving meaningful data.
+        </div>
+
+
+        <div class ="card clickable-card block-33">
+            <h3>Polyphenys Architecture</h3>
+            Learn more about the building blocks composing Polypheny.
+        </div>
+        
+        {% include utils/community-btns.html %}
+        
+
+    </div>
+
+    
+</div> 
