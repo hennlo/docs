@@ -23,11 +23,12 @@
                 <ul class="sidebar-group">
                     <!-- Arrange Groups-->
                     {% for group in site.data.side-nav %}
-                        <div id="sidebar-group">{{group[0] | capitalize}}</div>
+                        <div id="sidebar-group">{{ group[1].name }}</div>
                     
                         <!-- Top Tier List Currently allows only nested level of 2 until tier-3-->
                         <ul id="top-tier">
-                            {% for nav-item in group[1] %}
+                            {% for nav-item in group[1].topics %}
+                                
                                 <li class="tier-1 sidebar-list-item" >
                                     
                                         <!-- Add Dropdown Arrow if nested List -->

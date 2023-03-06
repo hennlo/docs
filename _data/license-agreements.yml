@@ -1,0 +1,29 @@
+cc_by:
+  display: CC BY
+  legal_link: https://creativecommons.org/licenses/by/4.0/legalcode
+  logo: /assets/images/third-party/license/cc_by.png
+
+cc_by-sa:
+  display: CC BY-SA
+  legal_link: https://creativecommons.org/licenses/by-sa/4.0/legalcode
+  logo: /assets/images/third-party/license/cc_by-sa.png
+
+cc_by-nd:
+  display: CC BY-ND
+  legal_link: https://creativecommons.org/licenses/by-nd/4.0/legalcode
+  logo: /assets/images/third-party/license/cc_by-nd.png
+
+cc_by-nc:
+  display: CC BY-NC
+  legal_link: https://creativecommons.org/licenses/by-nc/4.0/legalcode
+  logo: /assets/images/third-party/license/cc_by-nc.png
+
+cc_by-nc-sa:
+  display: CC BY-NC-SA
+  legal_link: https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+  logo: /assets/images/third-party/license/cc_by-nc-sa.png
+
+cc_by-nc-nd:
+  display: CC BY-NC-ND
+  legal_link: https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode
+  logo: /assets/images/third-party/license/cc_by-nc-nd.png

@@ -4,6 +4,9 @@ $header_height: 5em;
 $font-body: "SourceSansPro","OpenSans", "Roboto", Helvetica,Arial,sans-serif;
 $font-display: "Poppins";
 
+$font-doc-display: "Inter","Poppins";
+$font-doc-body: "Inter","SourceSansPro","OpenSans", "Roboto", Helvetica,Arial,sans-serif;
+
 
 // Color Variables
 $standard-black: #000;
@@ -574,6 +577,25 @@ img {
     height: auto;
 }
 
+
+/**
+IMG Video Thumbnail
+**/
+
+.video_thumbnail {
+
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+
+
+    
+    .responsive-iframe {
+        width: 560px;
+        height: 315px;
+    }
+
+}
 
 /**
 Display Text

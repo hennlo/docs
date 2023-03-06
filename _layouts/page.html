@@ -2,9 +2,10 @@
 layout: default
 ---
 
-            
 
-<h1>{{ page.title }}</h1>
+<h1 class="doc-post-heading" >{{ page.title }}</h1>      
+
+
 
 {% unless page.homepage %}
   {% if page.version %}
@@ -19,6 +20,7 @@ layout: default
 {% comment %} If the page supports it, show the contribution options. {% endcomment %}
 
 <div class="post-content">
+
     {% comment %}
     TOC LEVEL: By default, a page TOC includes h2 and h3 headers. To limit a
     page TOC to h2 headers only, set `toc_not_nested: true` in the page's
@@ -35,7 +37,6 @@ layout: default
             {% include toc.html html=content id="toc-list" %}
           </div>
         </div>
-        <hr class="mobile-toc-divider">
       </div>
     {% endif %}
     
@@ -46,5 +47,14 @@ layout: default
           {% else %}
             {% include anchor_headings.html html=content anchorClass="anchor" %}
         {% endif %}
+        <div class="license-info">
+          {% capture license_code %}{{ page.license | default: "cc_by-nc-nd" }}{% endcapture %}
+          {% assign page_license = site.data.license-agreements[license_code] %}
+          Licensed under 
+          <a href={{ page_license.legal_link }} id="license-text" "target="_blank">
+            <i>{{ page_license.display }}</i>
+            <img id="license-logo" class="mini-logo" src={{ page_license.logo }}>
+          </a>
+        </div>
       </div>
     </div>

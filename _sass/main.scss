@@ -23,6 +23,12 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Inter";
+  src: url("/assets/fonts/Inter-Regular.ttf");
+  font-display: swap;
+}
+
 
 $backgroundColor: #ffffff;
 $bodyColor: #000000;
@@ -363,8 +369,51 @@ a.navbar-item:hover::before {
   ul li {
     list-style: none;
 
-    &:hover {
+    & > a:hover {
       color: $light-primarycolor;
+    }
+  }
+}
+
+.doc-post-heading {
+  font-family: $font-doc-display;
+}
+
+.post-content {
+  font-family: $font-doc-body;
+
+  h1,h2,h3,h4.h5 {
+    font-family: $font-doc-display;
+    margin-top: 46px;
+    
+  }
+}
+
+.page-content {
+
+
+  ul {
+    display: block !important;
+  }
+
+  .license-info {
+    margin-top: 3em;
+    display: flex;
+    font-size: 0.8em;
+    align-items: center;
+
+    * {
+      display: flex;
+      align-items: center;
+    }
+
+    #license-text {
+      margin-left: 1em;
+    }
+
+    #license-logo {
+      margin-left: 0.5em;
+      width:80px;
     }
   }
 }
@@ -424,7 +473,7 @@ a.navbar-item:hover::before {
     flex-shrink: 0;
     flex-grow: 0;
 
-    padding-left: 5rem !important;
+    padding-left: 6rem !important;
     padding-right: 3rem !important;
 
     // 20em are from $sidebar-width
@@ -465,7 +514,7 @@ a.navbar-item:hover::before {
 
 .page-content {
   order: 1;
-  padding-right: 4em;
+  padding-right: 5em;
   max-width: 83.3333333337%;
 }
 
@@ -479,10 +528,6 @@ a.navbar-item:hover::before {
   order: 2;
   top: 14em;
   padding: 0 1em;
-}
-
-.mobile-toc-divider{
-  display: none;
 }
 
   .site-footer{
@@ -508,7 +553,7 @@ a.navbar-item:hover::before {
   $mobile_header_height: 5em;
 
   #header {
-    box-shadow: 0 -6px 10px 5px rgba(34, 34, 34, 0.5);
+    box-shadow: none !important;
   }
 
   .get-polpyheny-box{
@@ -575,7 +620,7 @@ a.navbar-item:hover::before {
   }
 
 
- 
+
 
   #maincontent input[type="checkbox"]:checked ~ #sidebarMenu{
     transform: translateY(0);
@@ -692,18 +737,17 @@ a.navbar-item:hover::before {
   }
 
 
-   /***
+  /***
     Content beneath Header
   ***/
   #maincontent {
     padding-top: calc(calc(#{$mobile_header_height} / 2) + 2em);
   }
 
-  
-  .mobile-toc-divider{
-    display: block;
+  #toc-wrapper{
+    margin-bottom: 3em;
   }
-
+  
 
     // Footer
     .site-footer{
@@ -713,6 +757,10 @@ a.navbar-item:hover::before {
 
     .media-600{
       display: none;
+    }
+
+    .page-content {
+      padding: 0 0.5em;
     }
 }
 
@@ -776,6 +824,9 @@ a.navbar-item:hover::before {
   
   background-color: $standard-white;
   z-index: 999;
+
+  font-family: $font-doc-body;
+
 }
 
 
@@ -1053,6 +1104,8 @@ a.anchor{
 a.anchor:hover{
   opacity: 1;
 }
+
+
 
 /****/
 

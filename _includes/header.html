@@ -16,11 +16,7 @@
         <!-- Logo -->
         <div id="logo-wrapper">
             <a href="/{{ active_lang }}/">
-                {% if site.short_title != "" %}
-                    <img class="home-logo media-600" alt="Polypheny Logo" src="/assets/images/logos/logo-symbol.svg">
-                {% else %}
-                    {% assign temp_style = "override_display" %}
-                {% endif %}
+                {% assign temp_style = "override_display" %}
                 <img class="home-logo media-full {{ temp_style }}" alt="Polypheny Logo" src="/assets/images/logos/logo-landscape.svg">        
             </a> 
         </div>

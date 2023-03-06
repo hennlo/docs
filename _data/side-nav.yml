@@ -6,127 +6,182 @@
 #######
 # Group
 start:
+  name: Start
+  topics:
+  
+    overview:
+      identifier: overview
+      name: Overview
+      url: overview
 
-  overview:
-    identifier: overview
-    name: Overview
-    url: overview
+    getting_started:
+      identifier: getting_started
+      name: Getting Started
 
-  getting_started:
-    identifier: getting_started
-    name: Getting Started
+      subfolderitems:
+        setup:
+          identifier: setup
+          name: Setup
+          url: 
 
-    subfolderitems:
-      setup:
-        identifier: setup
-        name: Setup
-        url: 
-
-      data_types:
-        identifier: data_types
-        name: Data Types
-        url: 
+        data_types:
+          identifier: data_types
+          name: Data Types
+          url: 
 
 
 #######
 # Group
 architecture:
+  name: Architecture
+  topics:
 
-# Topic
-  schema_model:
-    identifier: schema_model
-    name: Schema Model
+  # Topic
+    schema_model:
+      identifier: schema_model
+      name: Schema Model
 
-    subfolderitems:
-      basics:
-        identifier: basics
-        name: Basics
-        url: 
+      subfolderitems:
+        basics:
+          identifier: basics
+          name: Basics
+          url: 
 
-      data_partitioning:
-        identifier: data_partitioning
-        name: Data Partitioning
-        url: data-partitioning
+        data_partitioning:
+          identifier: data_partitioning
+          name: Data Partitioning
+          url: data-partitioning
 
-      views:
-        identifier: views
-        name: Views
-        url:
+        views:
+          identifier: views
+          name: Views
+          url:
 
-# Topic
-  data_storage:
-    identifier: data_storage
-    name: Data Storage
+  # Topic
+    data_storage:
+      identifier: data_storage
+      name: Data Storage
+
 
 
 #######
 # Group
+query_languages:
+  name: Query Languages
+  topics:
+      
+    sql:
+      identifier: sql
+      name: SQL
+
+      subfolderitems:
+        basics:
+          identifier: basics
+          name: Basics
+
+        syntax:
+          identifier: Syntax
+          name: Syntax
+
+    mogoql:
+      identifier: mongoql
+      name: MongoQL
+
+      subfolderitems:
+        basics:
+          identifier: basics
+          name: Basics
+
+        syntax:
+          identifier: Syntax
+          name: Syntax
+
+    Cypher:
+      identifier: cypher
+      name: Cypher
+
+      subfolderitems:
+        basics:
+          identifier: basics
+          name: Basics
+
+        syntax:
+          identifier: Syntax
+          name: Syntax
+
+
+    cql:
+      identifier: cql
+      name: CQL
+
+      subfolderitems:
+        basics:
+          identifier: basics
+          name: Basics
+
+        syntax:
+          identifier: Syntax
+          name: Syntax
+
+    pig:
+      identifier: pig
+      name: Pig
+
+      subfolderitems:
+        basics:
+          identifier: basics
+          name: Basics
+
+        syntax:
+          identifier: Syntax
+          name: Syntax
+
+#######
+# Group
 interfaces:
+  name: Interfaces
+  topics:
 
-# Topic
-  connectors:
-    identifier: connectors
-    name: Connectors & Drivers
+  # Topic
+    connectors:
+      identifier: connectors
+      name: Connectors & Drivers
 
-    subfolderitems:
-      python:
-        identifier: python
-        name: Python
+      subfolderitems:
+        python:
+          identifier: python
+          name: Python
 
-        subfolderitems:
-          install:
-            identifier: install
-            name: Install
-            url: install
+          subfolderitems:
+            install:
+              identifier: install
+              name: Install
+              url: install
 
-          python-connector:
-            identifier: python-connector
-            name: Python Connector
-            url: python-connector
+            python-connector:
+              identifier: python-connector
+              name: Python Connector
+              url: python-connector
 
-      java:
-        identifier: java
-        name: Java
+        java:
+          identifier: java
+          name: Java
 
-        subfolderitems:
-          install:
-            identifier: install
-            name: Install
-            url: install
+          subfolderitems:
+            install:
+              identifier: install
+              name: Install
+              url: install
 
-          python-connector:
-            identifier: jdbc
-            name: JDBC
-            url: jdbc
+            python-connector:
+              identifier: jdbc
+              name: JDBC
+              url: jdbc
 
-# Topic
-  query_languages:
-    identifier: query_languages
-    name: Query Languages
 
-    subfolderitems:
-      sql:
-        identifier: sql
-        name: SQL
 
-        subfolderitems:
-          basics:
-            identifier: basics
-            name: Basics
-
-          syntax:
-            identifier: Syntax
-            name: Syntax
-
-      mogoql:
-        identifier: mongoql
-        name: MongoQL
-
-        subfolderitems:
-          basics:
-            identifier: basics
-            name: Basics
-
-          syntax:
-            identifier: Syntax
-            name: Syntax
+#######
+# Group
+dev:
+  name: Developer Guidelines
+  topics:

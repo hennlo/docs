@@ -1,9 +1,10 @@
 ---
-layout: default
+layout: page
 title: Data Partitioning v0.8
-#toc: true
+toc: true
 docs_area: architecture
 lang: en
+license: cc_by
 tags: partitioning
 ---
 Replication in Version 0.8
@@ -11,6 +12,8 @@ Replication in Version 0.8
    
 Data partitioning is a common concept in Database Management Systems (DBMS) to split data in chunks or fragments. In general, it can be distinguished between *Replication*, *Vertical Partitioning* and *Horizontal Partitioning*. Polypheny also supports combining these techniques. This allows selectively replicating parts of the data and therefore efficiently optimize for multiple application requirements at the same time.
 
+## Video Option A
+{% include utils/video.html video_id="4T7oYP0YwEI" alt_text="test" %}
 
 
 
