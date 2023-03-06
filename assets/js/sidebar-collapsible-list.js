@@ -55,7 +55,6 @@ for (i = 0; i < leafs.length; i++) {
         var parent = leafs[i];
 
         while ( !reached_top ){
-          console.log("current:", parent);
           var parent = parent.parentElement;
           if ( parent.classList.contains("tier-1")  ){
             reached_top = true;
@@ -63,14 +62,11 @@ for (i = 0; i < leafs.length; i++) {
           }
 
           if ( parent.classList.contains("sidebar-sublist") ) {
-            console.log("inside");
             parent.classList.add("unfolded");
             parent.style.display = "block";
             
             // Get Sibling that must be anchor and has class=dropdown
-            console.log("Sibling:", parent.previousElementSibling);//.getElementsByClassName("sidebar-nested-arrow"));
             var anchor_sibling = parent.previousElementSibling;
-            console.log("Anchor:", anchor_sibling.getElementsByClassName("sidebar-nested-arrow")[0]);
             anchor_sibling.getElementsByClassName("sidebar-nested-arrow")[0].classList.toggle("sidebar-nested-arrow-unfolded");
             //parent.getElementsByClassName("sidebar-nested-arrow")[0].classList.add("sidebar-nested-arrow-unfolded");
           } 

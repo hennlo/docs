@@ -27,7 +27,7 @@ community:
 docs:
   identifier: docs
   name: Documentation
-  url: https://community.polypheny.org/documentation/
+  url: https://docs.polypheny.com
   external: true
 
 #resources:

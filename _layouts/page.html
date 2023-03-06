@@ -51,7 +51,7 @@ layout: default
           {% capture license_code %}{{ page.license | default: "cc_by-nc-nd" }}{% endcapture %}
           {% assign page_license = site.data.license-agreements[license_code] %}
           Licensed under 
-          <a href={{ page_license.legal_link }} id="license-text" "target="_blank">
+          <a href={{ page_license.legal_link }} id="license-text" target="_blank">
             <i>{{ page_license.display }}</i>
             <img id="license-logo" class="mini-logo" src={{ page_license.logo }}>
           </a>

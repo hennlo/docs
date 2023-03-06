@@ -9,11 +9,33 @@
         {% endif %}
         
         {% capture nav_identifier %}{{ nav-item[1].identifier }}{% endcapture %}
+
+
+
         {% capture nav_display_text %}{{ site.data.translation.[nav_identifier][active_lang] }}{% endcapture %}
-        {% if nav-item[1].external %}
-            <a class="navbar-item" href="{{ nav-item[1].url }}" target="_blank">{{ nav_display_text }}</a>
+
+        <!-- Only relevant if rendered site is for Doc Site-->
+        {% if site.short_title == "Documentation" %}
+            
+            {% if nav_identifier == "docs" %}     
+                <a class="navbar-item active" href="#">{{ nav_display_text }}</a>
+
+            {% else %}
+                {% if nav-item[1].external %}
+                    <a class="navbar-item" href="{{ nav-item[1].url }}" target="_blank">{{ nav_display_text }}</a>
+                {% else %}
+                    <a class="navbar-item {{ temp_classes }}" href="{{ site.homepage }}/{{ active_lang}}{{ nav-item[1].url }}">{{ nav_display_text }}</a>
+                {% endif %}
+            {% endif %}
+
         {% else %}
-            <a class="navbar-item {{ temp_classes }}" href="/{{ active_lang}}{{ nav-item[1].url }}">{{ nav_display_text }}</a>
+            {% if nav-item[1].external %}
+                <a class="navbar-item" href="{{ nav-item[1].url }}" target="_blank">{{ nav_display_text }}</a>
+            {% else %}
+                <a class="navbar-item {{ temp_classes }}" href="/{{ active_lang}}{{ nav-item[1].url }}">{{ nav_display_text }}</a>
+            {% endif %}
         {% endif %}
+    
+
     {% endfor %}
 </div>

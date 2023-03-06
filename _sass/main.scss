@@ -7,6 +7,18 @@
 }
 
 @font-face {
+  font-family: "OpenSans-CondLight";
+  src: url("/assets/fonts/OpenSans-CondLight.ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OpenSans-CondBold";
+  src: url("/assets/fonts/OpenSans-CondBold.ttf");
+  font-display: swap;
+}
+
+@font-face {
   font-family: "Roboto";
   src: url("/assets/fonts/Roboto-Regular.ttf");
 }
@@ -378,16 +390,23 @@ a.navbar-item:hover::before {
 
 #main-doc-intro-heading {
   font-size: 32px;
-
+  
   h1,h2 {
+    font-family: $font-doc-display;
     font-weight: 500;
+  }
+  
+  span.doc-post-heading {
+      color: $light-font-color;
+      font-family: "OpenSans-CondBold","OpenSans";
+  }
+
+  @media only screen and (max-width: 991px) {
+    font-size: 24px;
   }
 
 }
 
-.doc-post-heading {
-  font-family: $font-doc-display;
-}
 
 .post-content {
   font-family: $font-doc-body;

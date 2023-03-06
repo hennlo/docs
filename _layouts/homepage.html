@@ -10,13 +10,16 @@ title: Homepage
         <div class ="section block">
 
         <div id="main-doc-intro-heading" class="text-centered">
-            <h1 class="doc-post-heading">Polypheny Documentation</h1>
+            <h1>
+                <span class="doc-post-heading">Polypheny</span>
+                Documentation
+            </h1>
         </div>
 
         {{ content }}
 
         <div class ="card clickable-card block-33">
-            <a href=/{{ page.lang }}/{{ current_version | default: site.versions.stable }}/index>
+            <a href="/{{ page.lang }}/{{ current_version | default: site.versions.stable }}/index">
                 <h3>Getting Started</h3>
                 Learn Polypheny basics and get up to speed quickly.
             </a>
