@@ -884,14 +884,16 @@ a.navbar-item:hover::before {
   margin-bottom: 1rem !important;
 }
 
+
 .form-control{
+  
   display: block;
   width: 100%;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.725;
   color: #495057;
-  border: 1px solid #ced4da;
+  border: 2px solid #ced4da;
   border-radius: 4px;
   transition: border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
   background-image: url("../images/utils/magnifying-glass.svg");
@@ -899,6 +901,16 @@ a.navbar-item:hover::before {
   background-repeat: no-repeat;
   background-position: 10px center;
   padding-left: 30px;
+
+  &:focus {
+    
+    box-shadow: none;
+    outline: none;
+    color: #495057;
+    background-color: #fff;
+    border-color: $light-secondarycolor;
+  }
+
 }
 
 .sidebar{
